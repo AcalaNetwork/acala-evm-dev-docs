@@ -22,7 +22,7 @@ GET https://eth-rpc-mandala.aca-staging.network
 }
 
 ##### or see all of the transactions in the database
-POST https://tc7-graphql.aca-dev.network
+POST https://subql-query-mandala.aca-staging.network
 query {
   transactionReceipts{
     nodes {
