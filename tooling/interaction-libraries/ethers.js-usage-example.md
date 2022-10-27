@@ -16,7 +16,7 @@ The following example imports the `ethers`.js library and instantiates the conne
 const { ethers } = require("ethers");
 const { EVM } = require("@acala-network/contracts/utils/Address");
 const EVMContract = require("@acala-network/contracts/build/contracts/EVM.json");
-const provider = new ethers.providers.JsonRpcProvider("https://acala-mandala-adapter.api.onfinality.io/public");
+const provider = new ethers.providers.JsonRpcProvider("https://eth-rpc-mandala.aca-staging.network");
 
 const evmContract = new ethers.Contract(EVM, EVMContract.abi, provider);
 // const address = '0xC9CB0Bd811343Dbf6B9f61704d736dCD1975a7cE'; // is dev

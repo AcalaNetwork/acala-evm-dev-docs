@@ -53,7 +53,7 @@ This is an example on how to use the `eth_getEthGas` call in order to get the ga
 So for Truffle, to get the right gas price and limit. Let's ask the RPC:
 
 ```
-curl https://acala-mandala-adapter.api.onfinality.io/public \
+curl https://eth-rpc-mandala.aca-staging.network \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","method":"eth_getEthGas","params": [], "id": 1}'
 ```
@@ -75,7 +75,7 @@ So in your truffle-config.js you can adjust the gas parameters with the values r
 
 ```
 mandala: {
-    provider: () => new HDWalletProvider(mnemonic, "https://acala-mandala-adapter.api.onfinality.io/public"),
+    provider: () => new HDWalletProvider(mnemonic, "https://eth-rpc-mandala.aca-staging.network"),
     network_id: 595,
     gasPrice: 0x2f955803e9,
     gas: 0x3293440

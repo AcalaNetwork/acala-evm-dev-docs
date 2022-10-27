@@ -11,7 +11,7 @@ Most of the gas parameter issues that you might encounter, can be solved in two 
 1. Get valid gas parameters:
 
 ```shell
-curl --location --request GET 'https://acala-mandala-adapter.api.onfinality.io/public' \
+curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -63,7 +63,7 @@ There are three ways to get valid gas parameters for a transaction:
 Getting valid gas parameters is as easy as initiating the following call:
 
 ```shell
-curl --location --request GET 'https://acala-mandala-adapter.api.onfinality.io/public' \
+curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -76,7 +76,7 @@ curl --location --request GET 'https://acala-mandala-adapter.api.onfinality.io/p
 The following call will return the same result as using default substrate parameters:
 
 ```shell
-curl --location --request GET 'https://acala-mandala-adapter.api.onfinality.io/public' \
+curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -95,7 +95,7 @@ curl --location --request GET 'https://acala-mandala-adapter.api.onfinality.io/p
 Custom substrate parameters can be passed as well. For example if we want to get the gas parameters for a transaction that should be valid until block `10000000`:
 
 ```shell
-curl --location --request GET 'https://acala-mandala-adapter.api.onfinality.io/public' \
+curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -145,7 +145,7 @@ A thorough explanation about this method can be found in the [tutorials](broken-
 import { calcEthereumTransactionParams } from '@acala-network/eth-providers';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const MANDALA_NODE_URL = 'https://acala-mandala-adapter.api.onfinality.io/public';
+const MANDALA_NODE_URL = 'https://eth-rpc-mandala.aca-staging.network';
 const wsProvider = new WsProvider(MANDALA_NODE_URL);
 const api = await ApiPromise.create({ provider: wsProvider });
 

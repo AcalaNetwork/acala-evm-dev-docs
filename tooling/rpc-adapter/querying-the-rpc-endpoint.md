@@ -2,7 +2,7 @@
 
 Information about the chain can be queried using the RPC calls through the RPC endpoint. The easiest way to do so is using [Postman](https://www.postman.com/), so that we can save the calls and reuse them later.
 
-For example, you can query the RPC endpoint of the Mandala TC7 network using the following address: `https://acala-mandala-adapter.api.onfinality.io/public`.
+For example, you can query the RPC endpoint of the Mandala TC7 network using the following address: `https://eth-rpc-mandala.aca-staging.network`.
 
 As the RPC request is in the JSON format, we have to select the correct body setting. The correct setting is raw body with JSON formatting. The request for getting the [encoded](../../network/gas-parameters.md) gas parameters is:
 

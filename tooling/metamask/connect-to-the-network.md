@@ -40,7 +40,7 @@ This should open up a form to add a new network to your MetaMask (you might have
 
 | **Network name**       | Mandala TC7                                              |   |
 | ---------------------- | -------------------------------------------------------- | - |
-| **New RPC URL**        | `https://acala-mandala-adapter.api.onfinality.io/public` |   |
+| **New RPC URL**        | `https://eth-rpc-mandala.aca-staging.network` |   |
 | **Chain ID**           | 595                                                      |   |
 | **Currency symbol**    | mACA                                                     |   |
 | **Block Explorer URL** | `https://blockscout.mandala.acala.network/`              |   |

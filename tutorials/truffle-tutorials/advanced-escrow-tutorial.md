@@ -109,7 +109,7 @@ To be able to use the local development network and public test network within t
 
 ```javascript
     mandala: mandalaConfig("http://127.0.0.1:8545"),
-    mandalaPublicDev: mandalaConfig("https://acala-mandala-adapter.api.onfinality.io/public"),
+    mandalaPublicDev: mandalaConfig("https://eth-rpc-mandala.aca-staging.network"),
 ```
 
 Now that Mandala local development network is added to our project, let's take care of the remaining configuration. Mocha timeout should be active, to make sure that we don't get stuck in a loop if something goes wrong during tests. For this line 91 (this is after the modifications) in `truffle-config.js` should be uncommented:
