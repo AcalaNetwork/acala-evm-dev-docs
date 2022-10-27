@@ -81,7 +81,7 @@ As we will be using the Mandala test network, we need to add it to `hardhat.conf
      chainId: 595,
    },
    mandalaPubDev: {
-     url: 'https://acala-mandala-adapter.api.onfinality.io/public',
+     url: 'https://eth-rpc-mandala.aca-staging.network',
      accounts: {
        mnemonic: YOUR_MNEMONIC,
        path: "m/44'/60'/0'/0",

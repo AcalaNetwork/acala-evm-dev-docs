@@ -13,7 +13,7 @@ Developers who run a mandala node and eth-rpc-adaptor locally, won’t need to s
 ### In subQuery
 
 ```shell
-GET https://acala-mandala-adapter.api.onfinality.io/public
+GET https://eth-rpc-mandala.aca-staging.network
 {
   "id": 0,
   "jsonrpc": "2.0",
@@ -22,7 +22,7 @@ GET https://acala-mandala-adapter.api.onfinality.io/public
 }
 
 ##### or see all of the transactions in the database
-POST https://tc7-graphql.aca-dev.network
+POST https://subql-query-mandala.aca-staging.network
 query {
   transactionReceipts{
     nodes {
@@ -35,7 +35,7 @@ query {
 ### In cache
 
 ```shell
-GET https://acala-mandala-adapter.api.onfinality.io/public
+GET https://eth-rpc-mandala.aca-staging.network
 {
   "id": 0,
   "jsonrpc": "2.0",

@@ -100,11 +100,11 @@ Let's break this configuration down a bit:
 * `path` used in the `accounts` section defines the account derivation path to be used with the given mnemonic
 * `cahinId` of `595` is the default chain ID of the local development network.
 
-In addition to the local development network, we can also add the network configuration for the public development network. Most of the parameters are the same as for the local development network (unless you plan on using your own development accounts). The only change that we need to do is to change the URL of the network from `http://127.0.0.1:8545` to `https://acala-mandala-adapter.api.onfinality.io/public`. The following should be added to the `network` section of the `hardhat.config.js`:
+In addition to the local development network, we can also add the network configuration for the public development network. Most of the parameters are the same as for the local development network (unless you plan on using your own development accounts). The only change that we need to do is to change the URL of the network from `http://127.0.0.1:8545` to `https://eth-rpc-mandala.aca-staging.network`. The following should be added to the `network` section of the `hardhat.config.js`:
 
 ```javascript
     mandalaPubDev: {
-      url: 'https://acala-mandala-adapter.api.onfinality.io/public',
+      url: 'https://eth-rpc-mandala.aca-staging.network',
       accounts: {
         mnemonic: 'fox sight canyon orphan hotel grow hedgehog build bless august weather swarm',
         path: "m/44'/60'/0'/0",
@@ -149,7 +149,7 @@ module.exports = {
         chainId: 595,
         },
       mandalaPubDev: {
-        url: 'https://acala-mandala-adapter.api.onfinality.io/public',
+        url: 'https://eth-rpc-mandala.aca-staging.network',
         accounts: {
           mnemonic: 'fox sight canyon orphan hotel grow hedgehog build bless august weather swarm',
           path: "m/44'/60'/0'/0",

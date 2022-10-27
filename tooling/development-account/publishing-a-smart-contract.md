@@ -28,7 +28,7 @@ Trying to interact with an unpublished contract with an account that does not ha
 
 ## Verify that the smart contract has been published successfully
 
-Polkadot App can be used to verify wether or not the smart contract is published. This can be done using the [Chain state](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Facala-mandala.api.onfinality.io%2Fpublic-ws#/chainstate) viewer:
+Polkadot App can be used to verify wether or not the smart contract is published. This can be done using the [Chain state](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/chainstate) viewer:
 
 1. Using the **Storage** tab, select the **evm** from the **select state query** dropdown
 2. Select **accounts(H160)** from the method/action dropdown
