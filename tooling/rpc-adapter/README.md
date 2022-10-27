@@ -6,8 +6,8 @@ description: What is it and how to use it to debug your project
 
 ### RPC Endpoints
 
-* `wss://node-6870830370282213376.rz.onfinality.io/ws?apikey=0f273197-e4d5-45e2-b23e-03b015cb7000`
-* `wss://acala-mandala-adapter.api.onfinality.io/public-ws`
+* `wss://mandala-rpc.aca-staging.network/ws
+
 
 ### EVM RPC
 
@@ -51,10 +51,10 @@ curl https://eth-rpc-mandala.aca-staging.network \
 
 ### Web Socket RPC
 
-* `wss://tc7-eth.aca-dev.network/ws`
+* `wss://eth-rpc-mandala.aca-staging.network`
 
 ```
-wscat -c wss://tc7-eth.aca-dev.network/ws                                                                                                                    
+wscat -c wss://eth-rpc-mandala.aca-staging.network                                                                                                                   
 Connected (press CTRL+C to quit)
 > {"jsonrpc":"2.0","method":"eth_getCode","params": ["0x5d8aae4de6ccab1b58c91db8d200aa1577117b2b", "latest"],"id":1}
 ```
