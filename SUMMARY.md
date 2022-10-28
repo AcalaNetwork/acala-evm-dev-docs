@@ -81,11 +81,8 @@
 * [Using Bodhi.js to deploy smart contract & interact with it](special-features/using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md)
 * [Updating unpublished smart contract](special-features/updating-unpublished-smart-contract.md)
 
-## 💻 Developer Events
-
-* [ETHDenver](developer-events/ethdenver.md)
-
-## 🔎 Reference
-
-* [Common errors](reference/common-errors.md)
-* [Request support](reference/request-support.md)
+## 🔎 Miscellaneous
+* [FAQs](miscellaneous/FAQs.md)
+* [Common errors](miscellaneous/common-errors.md)
+* [ETHDenver](miscellaneous/ethdenver.md)
+* [Request support](miscellaneous/request-support.md)
