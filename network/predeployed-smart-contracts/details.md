@@ -2,17 +2,19 @@
 This section contains details about each of predeployed contracts, including their addresses, explanation, and deployment status.
 
 deployment status:
-- <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line">: the predeployed smart contract is enabled and interactable with in the given network.
+- <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> the predeployed smart contract is enabled and interactable with in the given network.
 - <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> the predeployed smart contract has not been enabled in the given network yet.
 
 ## ERC20
 The predeployed ERC20 smart contracts allow you to interact with these token contract reliably on all of the Acala EVM+ chain. You can also use these addresses to add the tokens to your MetaMask or any other EVM wallet you might use with the Acala EVM+.
 
+The most up to date list of ERC20 addresses can be found in the [predeploy-contracts repository](https://github.com/AcalaNetwork/predeploy-contracts/tree/master/contracts/utils)
+
 |                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (36).png" alt="" data-size="line"> |
 
-The most up to date list of ERC20 addresses can be found in the [predeploy-contracts repository](https://github.com/AcalaNetwork/predeploy-contracts/tree/master/contracts/utils)
+
 
 {% tabs %}
 {% tab title="Acala" %}
