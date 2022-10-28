@@ -60,4 +60,4 @@ To get the address of the DEX predeployed smart contract you can now simply use:
 ADDRESS.DEX
 ```
 
-If you want to refer to the addresses of the predeployed smart contracts, take a look at the following pages.
+If you want to refer to the addresses of the predeployed smart contracts, take a look at the following page.
