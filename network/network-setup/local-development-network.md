@@ -4,7 +4,7 @@ description: Instructions on how to run a local development network
 
 # Local development network
 
-## Setting up a local Mandala node
+## Setting up a local EVM+ Stack
 
 ### Prerequisites
 
@@ -15,7 +15,7 @@ The tooling needed in order to successfully run a local EVM+ development network
 * [yarn](https://classic.yarnpkg.com/lang/en/docs/install/)
 * [docker-compose](https://docs.docker.com/compose/install/)&#x20;
 
-### Starting the network node
+### Starting the mandala node and subquery
 
 To be able to run the local development network, you need to clone our `bodhi.js` monorepo. Fortunately the network resides within the `evm-subql` directory, so the full project doesn't have to be built. As the monorepo contains submodules, we recommend cloning them as well:
 
@@ -51,7 +51,7 @@ It's ok to see some error messege in the docker logs, since we don't have transa
 
 ![Cleaning up the local development network](<../../.gitbook/assets/image (4).png>)
 
-### Starting the RPC node
+### Starting the RPC adapter
 
 In addition to the local development network, we need to run an [Ethereum RPC adapter](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-rpc-adapter#acala-networketh-rpc-adapter), which provides [JSON-RPC](https://eth.wiki/json-rpc/API), so the tools that rely on JSON-RPC (such as Metamask, truffle, hardhat, etc...) will work. 
 
