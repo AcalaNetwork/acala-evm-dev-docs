@@ -1,4 +1,4 @@
-# Common errors
+# Common Errors
 
 {% tabs %}
 {% tab title="Error: -32603" %}

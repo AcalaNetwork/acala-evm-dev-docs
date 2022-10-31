@@ -4,7 +4,7 @@ description: Instructions on how to run a local development network
 
 # Local development network
 
-## Setting up a localhost EVM+ Node
+## Setting up a local EVM+ Stack
 
 ### Prerequisites
 
@@ -15,11 +15,7 @@ The tooling needed in order to successfully run a local EVM+ development network
 * [yarn](https://classic.yarnpkg.com/lang/en/docs/install/)
 * [docker-compose](https://docs.docker.com/compose/install/)&#x20;
 
-{% hint style="info" %}
-**NOTE: If you are using a Mac device with Apple silicon, you might need to install** [**rosetta**](https://osxdaily.com/2020/12/04/how-install-rosetta-2-apple-silicon-mac/) **in order to be able to use the required tools.**
-{% endhint %}
-
-### Starting the network node
+### Starting the mandala node and subquery
 
 To be able to run the local development network, you need to clone our `bodhi.js` monorepo. Fortunately the network resides within the `evm-subql` directory, so the full project doesn't have to be built. As the monorepo contains submodules, we recommend cloning them as well:
 
@@ -38,8 +34,10 @@ The local development network consists of Mandala node, Postgres database, SubQu
 cd evm-subql
 yarn
 yarn build
-docker compose up
+docker-compose up
 ```
+
+It's ok to see some error messege in the docker logs, since we don't have transactions in the node yet, so subquery will keep crashing and restarting. Once there are transactions, everything will work normally.
 
 ![Running a local development network](<../../.gitbook/assets/image (12).png>)
 
@@ -48,17 +46,19 @@ docker compose up
 
 **In order to have a clean start after every shutdown of the node, run the following command after the node was shut down:**
 
-**`docker compose down -v`**
+**`docker-compose down -v`**
 {% endhint %}
 
 ![Cleaning up the local development network](<../../.gitbook/assets/image (4).png>)
 
-### Starting the RPC node
+### Starting the RPC adapter
 
-In addition to the local development network, we need to run an Ethereum RPC adapter, so that the tools used to interact with most of the EVMs work (these tools include, Metamask, Remix, development frameworks, block explorers,..). We run it in another window by using:
+In addition to the local development network, we need to run an [Ethereum RPC adapter](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-rpc-adapter#acala-networketh-rpc-adapter), which provides [JSON-RPC](https://eth.wiki/json-rpc/API), so the tools that rely on JSON-RPC (such as Metamask, truffle, hardhat, etc...) will work. 
+
+We run it in another window by using:
 
 ```shell
-npx @acala-network/eth-rpc-adapter -l 1 --subql http://localhost:3001
+npx @acala-network/eth-rpc-adapter --localMode --subql http://localhost:3001
 ```
 
 ![Starting up the RPC node](<../../.gitbook/assets/image (15).png>)
@@ -71,9 +71,11 @@ npx @acala-network/eth-rpc-adapter -l 1 --subql http://localhost:3001
 
 Once the local development network is up and running, the following services are available:
 
-* An ETH RPC node: [http://localhost:8545](http://localhost:8545)
-* A subquery web interface: [http://localhost:3001](http://localhost:3001)
-* A WS RPC node: [ws://127.0.0.1:9944](ws://127.0.0.1:9944)&#x20;
+* An ETH JSON-RPC service: 
+  * [http://localhost:8545](http://localhost:8545)
+  * [ws://localhost:8545](ws://localhost:8545)
+* A subquery service: [http://localhost:3001](http://localhost:3001)
+* A local mandala node: [ws://127.0.0.1:9944](ws://127.0.0.1:9944)&#x20;
 * Local network Substrate chain explorer: [Polkadot{js} Explorer](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2Flocalhost%3A9944%2Fws#/explorer)
 
 ![Local development network in Substrate chain explorer](<../../.gitbook/assets/image (8).png>)

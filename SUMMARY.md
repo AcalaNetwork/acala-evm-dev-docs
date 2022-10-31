@@ -9,22 +9,12 @@
 
 ## 🌐 Network
 
-* [Network](network/network.md)
 * [Network configuration](network/network-configuration.md)
 * [Network setup](network/network-setup/README.md)
   * [Local development network](network/network-setup/local-development-network.md)
   * [Connecting to a public network with local RPC node](network/network-setup/connecting-to-a-public-network-with-local-rpc-node.md)
-* [Precompiled and predeployed smart contracts](network/precompiled-and-predeployed-smart-contracts/README.md)
-  * [ERC20](network/precompiled-and-predeployed-smart-contracts/erc20.md)
-  * [EVM](network/precompiled-and-predeployed-smart-contracts/evm.md)
-  * [Oracle](network/precompiled-and-predeployed-smart-contracts/oracle.md)
-  * [Schedule](network/precompiled-and-predeployed-smart-contracts/schedule.md)
-  * [DEX](network/precompiled-and-predeployed-smart-contracts/dex.md)
-  * [Stable asset](network/precompiled-and-predeployed-smart-contracts/stable-asset.md)
-  * [Homa](network/precompiled-and-predeployed-smart-contracts/homa.md)
-  * [EVM Accounts](network/precompiled-and-predeployed-smart-contracts/evm-accounts.md)
-  * [Honzon](network/precompiled-and-predeployed-smart-contracts/honzon.md)
-  * [Incentives](network/precompiled-and-predeployed-smart-contracts/incentives.md)
+* [Predeployed smart contracts](network/predeployed-smart-contracts/README.md)
+  * [Details](network/predeployed-smart-contracts/details.md)
 * [ACA token](network/aca-token.md)
 * [Gas parameters](network/gas-parameters.md)
 
@@ -91,11 +81,8 @@
 * [Using Bodhi.js to deploy smart contract & interact with it](special-features/using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md)
 * [Updating unpublished smart contract](special-features/updating-unpublished-smart-contract.md)
 
-## 💻 Developer Events
-
-* [ETHDenver](developer-events/ethdenver.md)
-
-## 🔎 Reference
-
-* [Common errors](reference/common-errors.md)
-* [Request support](reference/request-support.md)
+## 🔎 Miscellaneous
+* [FAQs](miscellaneous/FAQs.md)
+* [Common errors](miscellaneous/common-errors.md)
+* [ETHDenver](miscellaneous/ethdenver.md)
+* [Request support](miscellaneous/request-support.md)

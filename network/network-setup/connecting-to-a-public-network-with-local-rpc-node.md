@@ -4,21 +4,27 @@ description: Instructions on how to setup local RPC node that connects to a publ
 
 # Connecting to a public network with local RPC node
 
-Running a local RPC node allows you for a greater reliability and availability. To be able to run it, you need to install the `eth-rpc-adapter` dependency:
+Except from connecting to local development network, we can also run a local RPC node connecting to public networks. 
 
-```shell
-yarn global add @acala-network/eth-rpc-adapter
+```
+npx @acala-network/eth-rpc-adapter \
+  --endpoint <node-endpoint-ws-url> \
+  --subql <subquery-url>
 ```
 
-Running the local RPC node requires the `ENDPOINT_URL` and `SUBQL_URL` values to be passed before startup:
+Node endpoints and subquery urls can be found in [network configuration](../network-configuration.md).
 
+For example to connect to Mandala testnet:
 ```shell
-eth-rpc-adapter -e [URL] --suql [URL]
+npx @acala-network/eth-rpc-adapter \
+  --endpoint wss://mandala-rpc.aca-staging.network/ws \
+  --subql https://subql-query-mandala.aca-staging.network
 ```
 
-Any of the values listed in the [Network configuration section](../network-configuration.md) is valid. Select the network that you want to connect to and fill in the required values.
-
-When your local RPC node is running, you can pass it as a network endpoint with the URL: `http://localhost:8545`.The node can now be used for deployment and interaction with the smart contracts as well as your gateway to interact with the network with a wallet like [Metamask](../../tooling/metamask/).
+Also checkout the help command for more details
+```
+npx @acala-network/eth-rpc-adapter --help
+```
 
 {% hint style="info" %}
 **If you wish to learn more about the RPC adapter, you can find more info in the** [**RPC adapter documentation**](../../tooling/rpc-adapter/running-the-rpc-adapter.md)**.**
