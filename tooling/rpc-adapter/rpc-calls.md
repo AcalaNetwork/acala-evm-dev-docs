@@ -2,7 +2,7 @@
 
 There are two types of RPCs available:
 - [ETH compatible RPCs](#eth-compatible-rpcs), where interface and functionalities match the [JSON-RPC spec](https://eth.wiki/json-rpc/API)
-- [Custom RPCs](#custom-rpcs), that doesn't exist in traditional EVM world.
+- [Custom RPCs](#custom-rpcs), which are EVM+ specific RPCs that don't exist in traditional EVM world.
 
 ### ETH compatible RPCs
 - `web3_clientVersion`
