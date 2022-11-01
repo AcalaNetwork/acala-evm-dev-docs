@@ -57,7 +57,7 @@ You can verify your or someone else's developer status by accessing a smart cont
 
 ![Step 2: Create the signature of the claim ](<../../.gitbook/assets/image (27).png>)
 
-### Step 4: Claim Account on the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc7-rpcnode.aca-dev.network%2Fws#/extrinsics)
+### Step 4: Claim Account on the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics)
 
 The **ethAddress** should be the same as your metamask wallet address that you used above to generate the signature.
 
