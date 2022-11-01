@@ -16,7 +16,7 @@ This section assumes you are using the dockerized local development network desc
 | **ETH RPC Endpoint**    | `http://127.0.0.1:8545` |
 | **WS Endpoint**     | `ws://127.0.0.1:8545`   |
 | **Chain ID**        | 595                     |
-| **Symbol**          | ACA                     |
+| **Symbol**          | mACA                     |
 
 ## Mandala Testnet 
 
@@ -28,7 +28,7 @@ This section assumes you are using the dockerized local development network desc
 | **Subquery**    | `https://subql-query-mandala.aca-staging.network` |
 | **Explorer**        | `https://blockscout.mandala.acala.network`        |
 | **Chan ID**         | 595                                               |
-| **Symbol**          | ACA                                               |
+| **Symbol**          | mACA                                               |
 
 ## Karura Testnet
 
