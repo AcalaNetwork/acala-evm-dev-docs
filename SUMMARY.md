@@ -66,18 +66,14 @@
   * [DEX tutorial](tutorials/truffle-tutorials/dex-tutorial.md)
   * [EVM tutorial](tutorials/truffle-tutorials/evm-tutorial.md)
   * [Advanced Escrow tutorial](tutorials/truffle-tutorials/advanced-escrow-tutorial.md)
-* [Waffle tutorials](tutorials/waffle-tutorials/README.md)
-  * [HelloWorld tutorial](tutorials/waffle-tutorials/helloworld-tutorial.md)
-  * [Echo tutorial](tutorials/waffle-tutorials/echo-tutorial.md)
-  * [Token tutorial](tutorials/waffle-tutorials/token-tutorial.md)
-  * [NFT tutorial](tutorials/waffle-tutorials/nft-tutorial.md)
-  * [PrecompiledToken tutorial](tutorials/waffle-tutorials/precompiledtoken-tutorial.md)
+* [Waffle tutorials](tutorials/waffle-tutorials.md)
 * [Subgraph](tutorials/subgraph.md)
 
 ## ✨ Special features
 
 * [Special features](special-features/special-features.md)
 * [Using Bodhi.js to deploy smart contract & interact with it](special-features/using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md)
+* [Batch EVM transactions](special-features/batch-evm-transactions.md)
 * [Updating unpublished smart contract](special-features/updating-unpublished-smart-contract.md)
 
 ## 🔎 Miscellaneous

@@ -314,7 +314,8 @@ Our deploy script will reside in the definition (`async function main()`). First
     const { txParams } = require("../utils/transactionHelper");
 
     const txFeePerGas = '199999946752';
-    const storageByteDeposit = '100000000000000';
+    const storageByteDeposit = '100000000000000';      // for Mandala/Karura
+    // const storageByteDeposit = '300000000000000';   // for Acala
 
     async function main() {
             const ethParams = await txParams();

@@ -1,13 +1,11 @@
 # Using Bodhi.js to deploy smart contract & interact with it
 
-A basic example on how to sign Acala EVM+ transactions with a Polkadot wallet and the [bodhi.js](https://github.com/AcalaNetwork/bodhi.js/) SDK.
+In traditional EVM world, usually the only way to interact with DApps is through Metamask. One cool feature that EVM+ provides is that users can also use polkadot wallets.
+
+This is a basic example on how to sign Acala EVM+ transactions with a Polkadot wallet with the [bodhi.js](https://github.com/AcalaNetwork/bodhi.js/tree/master/bodhi#create-a-wallet) SDK.
 
 {% hint style="info" %}
-**INFO: You can find a hosted version of this example here:** [**https://bodhi-example-contract.vercel.app/**](https://bodhi-example-contract.vercel.app/)
-{% endhint %}
-
-{% hint style="info" %}
-**INFO: This example repository can be reached at** [**https://github.com/AcalaNetwork/bodhi-examples/tree/master/deploy-contract**](https://github.com/AcalaNetwork/bodhi-examples/tree/master/deploy-contract)****
+You can find a hosted version of this example [here](https://bodhi-example-contract.vercel.app/), and the source code can be found [here](https://github.com/AcalaNetwork/bodhi-examples/tree/master/deploy-contract).
 {% endhint %}
 
 ## Setup

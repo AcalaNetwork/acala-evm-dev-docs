@@ -315,7 +315,8 @@ Within the `txParams()` function, we set the parameters needed to be passed to t
 
 ```javascript
     const txFeePerGas = '199999946752';
-    const storageByteDeposit = '100000000000000';
+    const storageByteDeposit = '100000000000000';      // for Mandala/Karura
+    // const storageByteDeposit = '300000000000000';   // for Acala
     const blockNumber = await ethers.provider.getBlockNumber();
     
     const ethParams = calcEthereumTransactionParams({
@@ -349,7 +350,8 @@ const { calcEthereumTransactionParams } = require("@acala-network/eth-providers"
 
 async function txParams() {
     const txFeePerGas = '199999946752';
-    const storageByteDeposit = '100000000000000';
+    const storageByteDeposit = '100000000000000';      // for Mandala/Karura
+    // const storageByteDeposit = '300000000000000';   // for Acala
     const blockNumber = await ethers.provider.getBlockNumber();
 
     const ethParams = calcEthereumTransactionParams({
