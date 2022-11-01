@@ -4,20 +4,21 @@ description: Making a smart contract public
 
 # Publishing a smart contract
 
-Contracts will initially only be accessible by the contract developers, a special role that anyone can opt-in to. \
-\
-Once the contracts have been deployed and tested, they can be made public by paying a relatively large amount of ACA (the exact value still has to be determined) in order for them to become publicly accessible.&#x20;
+Contracts will initially only be accessible by the contract developers, a special role that anyone can opt-in to. 
 
-Only the contract's maintainer can publish it, no one else.\
-\
-Genuine teams that want to deploy contracts but cannot pay the upfront cost, can request a grant from the Acala Treasury.\
+Once the contracts have been deployed and tested, they can be made public by paying a small amount of ACA in order for them to become publicly accessible.&#x20;
 
+Only the contract's maintainer can publish it, no one else.
 
-## Mark a given contract as Published in the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc7-rpcnode.aca-dev.network%2Fws#/extrinsics)
+## Publish a contract
+
+{% hint style="info" %}
+The example below uses Mandala as example. For other networks, you will need to switch to different [Polkadot App](../chain-explorer.md#polkadotjs-app).
+{% endhint %}
 
 The deployment and publishing account of the **contract** have to be the same.
 
-1. Under the **Submission** tab, select **evm** from the **extrinsic** dropdown menu
+1. Under the **Submission** tab of [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics), select **evm** from the **extrinsic** dropdown menu
 2. Select **publishContract(contract)** from the method/action dropdown
 3. Fill in the **contract** address
 4. Click **Submit Transaction**

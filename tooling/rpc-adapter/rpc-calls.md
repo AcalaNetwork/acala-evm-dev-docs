@@ -1,50 +1,54 @@
 # RPC Calls
 
-We are continuously expanding the list of supported RPC calls. This is the current list. If you wish to dig deeper, you are welcome to check out our [rpc.json](https://github.com/AcalaNetwork/bodhi.js/blob/master/eth-rpc-adapter/src/rpc.json).
+There are two types of RPCs available:
+- [ETH compatible RPCs](#eth-compatible-rpcs), where interface and functionalities match the [JSON-RPC spec](https://eth.wiki/json-rpc/API)
+- [Custom RPCs](#custom-rpcs), that doesn't exist in traditional EVM world.
 
-## eth namespace
+### ETH compatible RPCs
+- `web3_clientVersion`
+- `net_version`
+- `eth_blockNumber`
+- `eth_chainId`
+- `eth_getTransactionCount`
+- `eth_getCode`
+- `eth_call`
+- `eth_getBalance`
+- `eth_getBlockByHash`
+- `eth_getBlockByNumber`
+- `eth_gasPrice`
+- `eth_accounts`
+- `eth_getStorageAt`
+- `eth_getBlockTransactionCountByHash`
+- `eth_getBlockTransactionCountByNumber`
+- `eth_sendRawTransaction`
+- `eth_estimateGas`
+- `eth_getTransactionByHash`
+- `eth_getTransactionReceipt`
+- `eth_getTransactionByBlockHashAndIndex`
+- `eth_getTransactionByBlockNumberAndIndex`
+- `eth_getUncleCountByBlockHash`
+- `eth_getUncleCountByBlockNumber`
+- `eth_getUncleByBlockHashAndIndex`
+- `eth_getUncleByBlockNumberAndIndex`
+- `eth_getLogs`
+- `eth_subscribe`
+- `eth_unsubscribe`
+- `eth_newFilter`
+- `eth_newBlockFilter`
+- `eth_getFilterLogs` (doesn't support unfinalized logs yet)
+- `eth_getFilterChanges` (doesn't support unfinalized logs yet)
+- `eth_uninstallFilter`
 
-* `eth_accounts`: Returns a list of addresses owned by client
-* `eth_blockNumber`: Returns the number of the most recent block
-* `eth_call`: Executes a new message call immediately without creating a transaction on the block chain
-* `eth_chainId`: Returns the chain ID of the current network
-* `eth_coinbase`: Returns the client coinbase address
-* `eth_estimateGas`: Generates and returns an estimate of how much gas is necessary to allow the transaction to complete
-* `eth_feeHistory`: Returns data relevant for fee estimation based on the specified range of blocks
-* `eth_gasPrice`: Returns the current price per gas in wei
-* `eth_getBalance`: Returns the balance of the account of given address
-* `eth_getBlockByHash`: Returns information about a block by hash
-* `eth_getBlockByNumber`: Returns information about a block by number
-* `eth_getBlockTransactionCountByHash`: Returns the number of transactions in a block from a block matching the given block hash
-* `eth_getBlockTransactionCountByNumber`: Returns the number of transactions in a block matching the given block number
-* `eth_getCode`: Returns code at a given address
-* `eth_getFilterChanges`: Polling method for a filter, which returns an array of logs which occurred since last poll
-* `eth_getFilterLogs`: Returns an array of all logs matching filter with given id
-* `eth_getStorage`: Returns the value from a storage position at a given address
-* `eth_getTransactionByBlockHashAndIndex`: Returns information about a transaction by block hash and transaction index position
-* `eth_getTransactionByBlockNumberAndIndex`: Returns information about a transaction by block number and transaction index position
-* `eth_getTransactionByHash`: Returns the information about a transaction requested by transaction hash
-* `eth_getTransactionCount`: Returns the number of transactions sent from an address
-* `eth_getTransactionReceipt`: Returns the receipt of a transaction by transaction hash
-* `eth_getUncleCountByBlockNumber`: Returns the number of transactions in a block matching the given block number
-* `eth_getLogs`: Returns an array of all logs matching filter with given id
-* `eth_getWork`**:** Returns the hash of the current block, the seedHash, and the boundary condition to be met (“target”)
-* `eth_hashrate`: Returns the number of hashes per second that the node is mining with
-* `eth_mining`: Returns whether the client is actively mining new blocks
-* `eth_newBlockFilter`: Creates a filter in the node, to notify when a new block arrives
-* `eth_newFilter`: Creates a filter object, based on filter options, to notify when the state changes (logs)
-* `eth_newPendingTransactionFilter`: Creates a filter in the node, to notify when new pending transactions arrive
-* `eth_sendRawTransaction`: Submits a raw transaction
-* `eth_sendTransaction`: Signs and submits a transaction
-* `eth_sign`: Returns an EIP-191 signature over the provided data
-* `eth_signTransaction`: Returns an RLP encoded transaction signed by the specified account
-* `eth_submitHashrate`: Used for submitting mining hashrate
-* `eth_submitWork`: Used for submitting a proof-of-work solution
-* `eth_uninstallFilter`: Uninstalls a filter with given id
-
-## net namespace
-
-* `net_version`: Returns the currently configured chain ID, a value used in replay-protected transaction signing as introduced by EIP-155
+### Custom RPCs
+- `eth_getEthGas`: calculate eth transaction gas params from substrate gas params. More details please refer [here](https://evmdocs.acala.network/network/gas-parameters)
+- `eth_getEthResources`: calculate eth transaction gas params from transaction details, params: [TransactionRequest](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionRequest)
+- `net_indexer`: get subql indexer metadata
+- `net_cacheInfo`: get the cache info
+- `net_isSafeMode`: check if this RPC is running in safe mode
+- `net_health`: check the health of the RPC endpoint
+- `net_runtimeVersion`: check the current runtime version of the underlying polkadot.js api
+- `eth_isBlockFinalized`: check if a block is finalized, params: [BlockTag](https://docs.ethers.io/v5/api/providers/types/#providers-BlockTag)
+- `eth_isTransactionFinalized`: check if a transaction is finalized, note that it also returns false for non-exist tx, params: string
 
 ## Example of use
 
@@ -82,16 +86,9 @@ mandala: {
 }, 
 ```
 
-#### What are the three parameters of `eth_getEthGas`?
+For more details about the gas params, please refer to the [gas params section](../../network/gas-parameters.md).
 
-The parameters are `[gasLimit, storageLimit, validUntil?]`
+{% hint style="info" %}
+We can also send the RPC call with [Postman](https://www.postman.com/), so that we can save the calls and reuse them later.
+{% endhint %}
 
-* `gasLimit` (optional): substrate gasLimit, usually 21000000
-* `storageLimit` (optional): substrate storage limit, usually 64001 for contract deployment
-* `validUntil` (optional): valid until block, default to (current block + 100)
-
-#### How is **gasLimit** & **storageLimit** calculated?
-
-{% content-ref url="../../network/gas-parameters.md" %}
-[gas-parameters.md](../../network/gas-parameters.md)
-{% endcontent-ref %}
