@@ -15,3 +15,6 @@ TODO
 
 ## why metamask tx doesn't confirm with local mandala?
 TODO
+
+## tx failing reason not showing in blockscout
+TODO

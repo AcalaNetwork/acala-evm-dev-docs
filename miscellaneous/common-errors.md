@@ -1,7 +1,7 @@
 # Common Errors
+This page summarises common errors that you might encounter while developing on Acala EVM+. If an error occurs that is not listed here, please reach out, so we might lend a hand and include it on this page.
 
-{% tabs %}
-{% tab title="Error: -32603" %}
+## Error: -32603
 ### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 0, message: None })
 
 **Error name:** AddressNotMapped
@@ -15,8 +15,6 @@
 **Suggested actions:**
 
 * We suggest reaching out to us, so we can help you investigate the issue
-
-
 
 ### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 1, message: None })
 
@@ -249,9 +247,8 @@
 **Suggested actions:**
 
 * We suggest only using the values greater than `1_000_000` when referring to a native currency in wei
-{% endtab %}
 
-{% tab title="Named errors" %}
+## Named Errors
 ### {"value": {"code": -23603, "data": {"code": 6969, "messages": "Error: 1010: Invalid transaction: Transaction is outdated"\}}}
 
 **Error name:** Transaction is outdated
@@ -282,7 +279,15 @@
 
 * Review logs and identify the original error to address it
 * If the previous error can't be found, wait for 15 minutes and re-attempt sending the transaction. The original error message should be returned
-{% endtab %}
-{% endtabs %}
 
-This page summarises common errors that you might encounter while developing on Acala EVM+. If an error occurs that is not listed here, please reach out, so we might lend a hand and include it on this page.
+## Other Erros
+### `Transaction hash mismatch from Provider.sendTransaction`
+**Common causes:**
+
+This is usually cause by using `ethers.JsonRpcProvider` as provider when sending a transaction. 
+
+**Suggested actions:**
+
+Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-providers#getting-started).
+
+Note that `JsonRpcProvider` should still work in most cases, except when sending a transaction.
