@@ -293,7 +293,7 @@ This is usually cause by using `ethers.JsonRpcProvider` as provider when sending
 
 Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-providers#getting-started). For example:
 
-```ts
+```javascript
 const provider = new EvmRpcProvider('chain node ws url');
 await provider.isReady();
 const signer = new ethers.Wallet('private key', provider);
