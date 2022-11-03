@@ -12,4 +12,4 @@ To be able to run the tutorial steps that require an operational development net
 
 ## Current tutorials
 
-https://github.com/AcalaNetwork/bodhi.js/tree/master/examples/waffle
+Current tutorials are [here](https://github.com/AcalaNetwork/bodhi.js/tree/master/examples/waffle)

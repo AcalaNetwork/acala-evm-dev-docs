@@ -1,8 +1,8 @@
 # Common Errors
 This page summarises common errors that you might encounter while developing on Acala EVM+. If an error occurs that is not listed here, please reach out, so we might lend a hand and include it on this page.
 
-## Error: -32603
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 0, message: None })
+## ProviderError: Error: -32603: execution fatal
+### `{ index: 180, error: 0, message: None }`
 
 **Error name:** AddressNotMapped
 
@@ -16,7 +16,7 @@ This page summarises common errors that you might encounter while developing on 
 
 * We suggest reaching out to us, so we can help you investigate the issue
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 1, message: None })
+### `{ index: 180, error: 1, message: None }`
 
 **Error name:** ContractNotFound
 
@@ -32,7 +32,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 2, message: None })
+### `{ index: 180, error: 2, message: None }`
 
 **Error name:** NoPermission
 
@@ -49,7 +49,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 3, message: None })
+### `{ index: 180, error: 3, message: None }`
 
 **Error name:** ContractDevelopmentNotEnabled
 
@@ -66,7 +66,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 4, message: None })
+### `{ index: 180, error: 4, message: None }`
 
 **Error name:** ContractDevelopmentAlreadyEnabled
 
@@ -83,7 +83,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 5, message: None })
+### `{ index: 180, error: 5, message: None }`
 
 **Error name:** ContractAlreadyPublished
 
@@ -100,7 +100,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 6, message: None })&#x20;
+### `{ index: 180, error: 6, message: None })&#x20`
 
 **Error name:** ContractExceedsMaxCodeSize
 
@@ -116,7 +116,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 7, message: None })
+### `{ index: 180, error: 7, message: None }`
 
 **Error name:** ContractAlreadyExisted
 
@@ -136,7 +136,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 8, message: None })
+### `{ index: 180, error: 8, message: None }`
 
 **Error name:** OutOfStorage
 
@@ -153,7 +153,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 9, message: None })
+### `{ index: 180, error: 9, message: None }`
 
 **Error name:** ChargeFeeFailed
 
@@ -169,7 +169,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 10, message: None })
+### `{ index: 180, error: 10, message: None }`
 
 **Error name:** CannotKillContract
 
@@ -185,7 +185,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 11, message: None })
+### `{ index: 180, error: 11, message: None }`
 
 **Error name:** ReserveStorageFailed
 
@@ -202,7 +202,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 12, message: None })
+### `{ index: 180, error: 12, message: None }`
 
 **Error name:** UnreserveStorageFailed
 
@@ -218,7 +218,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 13, message: None })
+### `{ index: 180, error: 13, message: None }`
 
 **Error name:** ChargeStorageFailed
 
@@ -234,7 +234,7 @@ This page summarises common errors that you might encounter while developing on 
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 14, message: None })
+### `{ index: 180, error: 14, message: None }`
 
 **Error name:** InvalidDecimals
 
@@ -249,7 +249,7 @@ This page summarises common errors that you might encounter while developing on 
 * We suggest only using the values greater than `1_000_000` when referring to a native currency in wei
 
 ## Named Errors
-### {"value": {"code": -23603, "data": {"code": 6969, "messages": "Error: 1010: Invalid transaction: Transaction is outdated"\}}}
+### `Error: 1010: Invalid transaction: Transaction is outdated`
 
 **Error name:** Transaction is outdated
 
@@ -265,7 +265,7 @@ This page summarises common errors that you might encounter while developing on 
 * Verify that the transaction has a valid `validUntil` value and update it if the block number of the chain is higher
 * Reset the account nonce, to make sure it corresponds to the one associated with the account nonce on chain
 
-### {"value": {"code": -23603, "data": {"code": 6969, "messages": "Error: 1012: Invalid transaction: Transaction is temporary banned"\}}}
+### `Error: 1012: Invalid transaction: Transaction is temporary banned`
 
 **Error name:** Transaction is temporary banned
 
@@ -280,7 +280,7 @@ This page summarises common errors that you might encounter while developing on 
 * Review logs and identify the original error to address it
 * If the previous error can't be found, wait for 15 minutes and re-attempt sending the transaction. The original error message should be returned
 
-## Other Erros
+## Other Errors
 ### `Transaction hash mismatch from Provider.sendTransaction`
 **Common causes:**
 
@@ -288,6 +288,13 @@ This is usually cause by using `ethers.JsonRpcProvider` as provider when sending
 
 **Suggested actions:**
 
-Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-providers#getting-started).
+Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-providers#getting-started). For example:
+
+```ts
+const provider = EvmRpcProvider.from('chain node ws url');
+await provider.isReady();
+const signer = new ethers.Wallet('private key', provider);
+// use the signer to send transaction ...
+```
 
 Note that `JsonRpcProvider` should still work in most cases, except when sending a transaction.
