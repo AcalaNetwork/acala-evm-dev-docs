@@ -13,8 +13,16 @@ Developers who run a mandala node and eth-rpc-adaptor locally, usually won’t n
 ## why tx failed after I manually changed gas params in metamask?
 TODO
 
+## how to fetch the valid gas params 
+
 ## why metamask tx doesn't confirm with local mandala?
 TODO
 
+## I have balance on metamask, but transfer failed
+TODO
+
 ## tx failing reason not showing in blockscout
+TODO
+
+## how to check if a transaction is finalized?
 TODO

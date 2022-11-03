@@ -281,10 +281,13 @@ This page summarises common errors that you might encounter while developing on 
 * If the previous error can't be found, wait for 15 minutes and re-attempt sending the transaction. The original error message should be returned
 
 ## Other Errors
+### `invalid ETH gasLimit/gasPrice combination provided`
+We don't support inputting random gasLimit/gasPrice combination. Please read through the [gas params](../network/gas-parameters.md) section, which has detailed explanation of how to provide valid gas params.
+
 ### `Transaction hash mismatch from Provider.sendTransaction`
 **Common causes:**
 
-This is usually cause by using `ethers.JsonRpcProvider` as provider when sending a transaction. 
+This is usually cause by using `ethers.JsonRpcProvider` as provider when sending a transaction. `JsonRpcProvider` expects a pre-calculated ETH style tx hash. However, the algorithm we use to derive the result tx hash is different than traditional EVM world, causing the mismatch.
 
 **Suggested actions:**
 
@@ -294,9 +297,10 @@ Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.c
 const provider = new EvmRpcProvider('chain node ws url');
 await provider.isReady();
 const signer = new ethers.Wallet('private key', provider);
-
-// use the signer to send transaction ...
+// send some transactions ...
 await provider.disconnect();
 ```
 
-Note that `JsonRpcProvider` should still work in most cases, except when sending a transaction.
+Note that `JsonRpcProvider` should still work in most cases, such as getting account balance, etc... The only senario that this error occur is when the operation internally calls `Provider.sendTransaction`.
+
+Also, it only occurs for `ethers.JsonRpcProvider`, and using other providers (such as metamask's provider) should be fine.
