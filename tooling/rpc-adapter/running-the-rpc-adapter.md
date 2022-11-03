@@ -108,7 +108,7 @@ More details can also be found by `yarn start --help` or `npx @acala-network/eth
 | ENV                | CLI options equivalent | default             | explanation                                                                                             |
 |--------------------|------------------------|---------------------|---------------------------------------------------------------------------------------------------------|
 | ENDPOINT_URL       | -e, --endpoint         | ws://localhost:9944 | Node websocket endpoint(s): can provide one or more endpoints, seperated by comma url        |
-| SUBQL_URL          | --subql                | undefined           | Subquery url: *optional* if testing contracts locally that doesn\'t query logs or historical Tx, otherwise *required* |
+| SUBQL_URL          | --subql                | undefined           | Subquery url: *optional* if testing contracts locally that doesn\'t query logs or historical Tx, otherwise *required*. [more info](../../miscellaneous/FAQs.md#when-do-i-need-to-provide-subquery-url-for-eth-rpc-adpater-or-evmrpcprovider) |
 | PORT               | -p, --port             | 8545                | port to listen for http and ws requests                                    |
 | MAX_CACHE_SIZE     | --max-cache-size       | 200                 | max number of blocks that lives in the cache [more info](https://evmdocs.acala.network/network/network) |
 | MAX_BATCH_SIZE     | --max-batch-size       | 50                  | max batch size for RPC request                                                                          |
