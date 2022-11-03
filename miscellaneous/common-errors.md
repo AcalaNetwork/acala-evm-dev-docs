@@ -291,10 +291,12 @@ This is usually cause by using `ethers.JsonRpcProvider` as provider when sending
 Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-providers#getting-started). For example:
 
 ```ts
-const provider = EvmRpcProvider.from('chain node ws url');
+const provider = new EvmRpcProvider('chain node ws url');
 await provider.isReady();
 const signer = new ethers.Wallet('private key', provider);
+
 // use the signer to send transaction ...
+await provider.disconnect();
 ```
 
 Note that `JsonRpcProvider` should still work in most cases, except when sending a transaction.
