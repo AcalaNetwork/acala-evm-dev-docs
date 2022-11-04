@@ -1,4 +1,4 @@
-# Using Bodhi.js to deploy smart contract & interact with it
+# Using polkadot wallet to interact with EVM+
 
 In traditional EVM world, usually the only way to interact with DApps is through Metamask. One cool feature that EVM+ provides is that users can also use polkadot wallets.
 

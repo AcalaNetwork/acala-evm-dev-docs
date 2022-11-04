@@ -1,6 +1,6 @@
 # Gas parameters
 
-The main difference between Acala EVM+ and legacy EVM is that we need to use pre-computed `gasPrice` and `gasLimit` (we will refer them as "gas parameters"), and manually inputting random gas parameters is discouraged.
+The main difference between Acala EVM+ and legacy EVM is that we need to use pre-computed `gasPrice` and `gasLimit` (we will refer them as "gas parameters"). Manually inputting random gas parameters is discouraged.
 
 <details>
 
@@ -57,6 +57,8 @@ There are three ways to get valid gas parameters for a transaction:
 * Using an RPC call
 * Using hardcoded values
 * Using an SDK helper
+
+[which one should I use?](../miscellaneous/FAQs.md#how-to-fetch-valid-gas-params-in-different-senarios)
 
 #### **Using an RPC call**
 
@@ -143,23 +145,17 @@ A thorough explanation about this method can be found in the [tutorials](broken-
 
 ```typescript
 import { calcEthereumTransactionParams } from '@acala-network/eth-providers';
-import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const MANDALA_NODE_URL = 'https://eth-rpc-mandala.aca-staging.network';
-const wsProvider = new WsProvider(MANDALA_NODE_URL);
-const api = await ApiPromise.create({ provider: wsProvider });
+const txFeePerGas = '199999946752';
+const storageByteDeposit = '100000000000000';      // for Mandala/Karura
+// const storageByteDeposit = '300000000000000';   // for Acala
 
-const storageByteDeposit = (api.consts.evm.storageDepositPerByte).toString();
-const txFeePerGas = (api.consts.evm.txFeePerGas).toString();
-const blockNumber = (await api.rpc.chain.getHeader()).number.toNumber();
-// const blockNumber = 1000000;     // hard coded option
-
-const { txGasPrice, txGasLimit } = calcEthereumTransactionParams({
-  gasLimit: 1000010,
-  storageLimit: 640010,
-  validUntil: blockNumber + 100,
+const ethParams = calcEthereumTransactionParams({
+  gasLimit: 21000000,
+  validUntil: curblockNumber + 100,                // or hardcode a very big number
+  storageLimit: 64001,
   txFeePerGas,
-  storageByteDeposit,
+  storageByteDeposit
 });
 
 console.log({

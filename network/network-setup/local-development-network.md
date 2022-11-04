@@ -58,7 +58,7 @@ In addition to the local development network, we need to run an [Ethereum RPC ad
 We run it in another window by using:
 
 ```shell
-npx @acala-network/eth-rpc-adapter --localMode --subql http://localhost:3001
+npx @acala-network/eth-rpc-adapter --local-mode --subql http://localhost:3001
 ```
 
 ![Starting up the RPC node](<../../.gitbook/assets/image (15).png>)
@@ -75,8 +75,8 @@ Once the local development network is up and running, the following services are
   * [http://localhost:8545](http://localhost:8545)
   * [ws://localhost:8545](ws://localhost:8545)
 * A subquery service: [http://localhost:3001](http://localhost:3001)
-* A local mandala node: [ws://127.0.0.1:9944](ws://127.0.0.1:9944)&#x20;
-* Local network Substrate chain explorer: [Polkadot{js} Explorer](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2Flocalhost%3A9944%2Fws#/explorer)
+* A local mandala node: [ws://localhost:9944](ws://localhost:9944)&#x20;
+* Local network Substrate chain explorer: [Polkadot.js App](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2Flocalhost%3A9944%2Fws#/explorer)
 
 ![Local development network in Substrate chain explorer](<../../.gitbook/assets/image (8).png>)
 
