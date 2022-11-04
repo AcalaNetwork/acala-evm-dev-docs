@@ -16,7 +16,7 @@ While we will to outline as much of the security considerations as we can, there
 
 Our native tokens ACA and KAR have a mirrored [predeployed smart contract](../network/precompiled-and-predeployed-smart-contracts/), which means that a change in balance of the native currency is also reflected in the mirrored ERC20 predeployed smart contract and vice versa. A DeFi protocol that supports operation of the native currency as well as the predeployed ERC20 smart contracts may encounter unexpected or unreliable behaviour because of this.
 
-We suggest to either blacklist the mirrored ERC20 smart contract of the native currency or to disable operations with native currency and only support the mirrored ERC20 version.
+We suggest to disable operations with native currency and only support the mirrored ERC20 version.
 
 ### 2. Dust balance consideration
 

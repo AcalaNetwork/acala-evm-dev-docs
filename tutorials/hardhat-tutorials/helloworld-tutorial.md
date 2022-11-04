@@ -201,7 +201,7 @@ mkdir test && touch test/HelloWorld.js
 ```
 
 {% hint style="info" %}
-**NOTE: This tutorial assumes that the tests will be run in the** [**overloaded parameters mode**](../../tooling/rpc-adapter/running-the-rpc-adapter.md#list-of-options)**, called **_**rich mode**_**. It is enabled by passing the **_**-r**_** flag when spinning up the RPC adapter. If you wish to run them without the overloaded mode, please refer to how we pass the deployment transaction parameters, like we do in the Add a script section.**
+This tutorial assumes that the tests will be run in the [overloaded parameters mode](../../tooling/rpc-adapter/running-the-rpc-adapter.md#list-of-options), called `rich mode`. It is enabled by passing the `-r` flag when spinning up the RPC adapter. If you wish to run them without the overloaded mode, please refer to how we pass the deployment transaction parameters, like we do in the Add a script section.
 {% endhint %}
 
 On the first line of the test, import the `expect` from `chai`:

@@ -6,6 +6,10 @@ description: Example of updating an unpublished smart contract
 
 One of the features of Acala EVM+ is the ability to verify the expected behaviour of your smart contract before the users can interact with it (before it is published). In the event of the business logic of the contract being broken, it can be updated without the need to redeploy a new version of the smart contract.
 
+{% hint style="danger" %}
+We can only update **unpublished** contracts.
+{% endhint %}
+
 Let's take a simple `Echo` smart contract that we deployed to the chain:
 
 ```solidity
@@ -56,7 +60,7 @@ contract Echo{
 }
 ```
 
-The code can be updated using extrinsics in the [Polkadot.js application](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics). The call can be found under `Developer menu` in `Extrinsics`. Then select `evm` in the extrinsics selection dropdown and `sendCode` call. The arguments passed to it is the address of the unpublished smart contract we are updating and the new bytecode.
+The code can be updated using extrinsics in the [Polkadot.js application](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics). The call can be found under `Developer menu` in `Extrinsics`. Then select `evm` in the extrinsics selection dropdown and `setCode` call. The arguments passed to it is the address of the unpublished smart contract we are updating and the new bytecode.
 
 ![Developer > Extrinsics > evm > setCode](<../.gitbook/assets/image (9).png>)
 

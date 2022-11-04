@@ -1,8 +1,8 @@
 # Common Errors
+This page summarises common errors that you might encounter while developing on Acala EVM+. If an error occurs that is not listed here, please reach out, so we might lend a hand and include it on this page.
 
-{% tabs %}
-{% tab title="Error: -32603" %}
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 0, message: None })
+## ProviderError: Error: -32603: execution fatal
+### `{ index: 180, error: 0, message: None }`
 
 **Error name:** AddressNotMapped
 
@@ -16,9 +16,7 @@
 
 * We suggest reaching out to us, so we can help you investigate the issue
 
-
-
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 1, message: None })
+### `{ index: 180, error: 1, message: None }`
 
 **Error name:** ContractNotFound
 
@@ -34,7 +32,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 2, message: None })
+### `{ index: 180, error: 2, message: None }`
 
 **Error name:** NoPermission
 
@@ -51,7 +49,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 3, message: None })
+### `{ index: 180, error: 3, message: None }`
 
 **Error name:** ContractDevelopmentNotEnabled
 
@@ -68,7 +66,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 4, message: None })
+### `{ index: 180, error: 4, message: None }`
 
 **Error name:** ContractDevelopmentAlreadyEnabled
 
@@ -85,7 +83,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 5, message: None })
+### `{ index: 180, error: 5, message: None }`
 
 **Error name:** ContractAlreadyPublished
 
@@ -102,7 +100,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 6, message: None })&#x20;
+### `{ index: 180, error: 6, message: None })&#x20`
 
 **Error name:** ContractExceedsMaxCodeSize
 
@@ -118,7 +116,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 7, message: None })
+### `{ index: 180, error: 7, message: None }`
 
 **Error name:** ContractAlreadyExisted
 
@@ -138,7 +136,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 8, message: None })
+### `{ index: 180, error: 8, message: None }`
 
 **Error name:** OutOfStorage
 
@@ -155,7 +153,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 9, message: None })
+### `{ index: 180, error: 9, message: None }`
 
 **Error name:** ChargeFeeFailed
 
@@ -171,7 +169,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 10, message: None })
+### `{ index: 180, error: 10, message: None }`
 
 **Error name:** CannotKillContract
 
@@ -187,7 +185,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 11, message: None })
+### `{ index: 180, error: 11, message: None }`
 
 **Error name:** ReserveStorageFailed
 
@@ -204,7 +202,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 12, message: None })
+### `{ index: 180, error: 12, message: None }`
 
 **Error name:** UnreserveStorageFailed
 
@@ -220,7 +218,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 13, message: None })
+### `{ index: 180, error: 13, message: None }`
 
 **Error name:** ChargeStorageFailed
 
@@ -236,7 +234,7 @@
 
 
 
-### ProviderError: Error: -32603: execution fatal: Module(ModuleError { index: 180, error: 14, message: None })
+### `{ index: 180, error: 14, message: None }`
 
 **Error name:** InvalidDecimals
 
@@ -249,10 +247,9 @@
 **Suggested actions:**
 
 * We suggest only using the values greater than `1_000_000` when referring to a native currency in wei
-{% endtab %}
 
-{% tab title="Named errors" %}
-### {"value": {"code": -23603, "data": {"code": 6969, "messages": "Error: 1010: Invalid transaction: Transaction is outdated"\}}}
+## Named Errors
+### `Error: 1010: Invalid transaction: Transaction is outdated`
 
 **Error name:** Transaction is outdated
 
@@ -268,7 +265,7 @@
 * Verify that the transaction has a valid `validUntil` value and update it if the block number of the chain is higher
 * Reset the account nonce, to make sure it corresponds to the one associated with the account nonce on chain
 
-### {"value": {"code": -23603, "data": {"code": 6969, "messages": "Error: 1012: Invalid transaction: Transaction is temporary banned"\}}}
+### `Error: 1012: Invalid transaction: Transaction is temporary banned`
 
 **Error name:** Transaction is temporary banned
 
@@ -282,7 +279,28 @@
 
 * Review logs and identify the original error to address it
 * If the previous error can't be found, wait for 15 minutes and re-attempt sending the transaction. The original error message should be returned
-{% endtab %}
-{% endtabs %}
 
-This page summarises common errors that you might encounter while developing on Acala EVM+. If an error occurs that is not listed here, please reach out, so we might lend a hand and include it on this page.
+## Other Errors
+### `invalid ETH gasLimit/gasPrice combination provided`
+We don't support inputting random gasLimit/gasPrice combination. Please read through the [gas params](../network/gas-parameters.md) section, which has detailed explanation of how to provide valid gas params.
+
+### `Transaction hash mismatch from Provider.sendTransaction`
+**Common causes:**
+
+This is usually cause by using `ethers.JsonRpcProvider` as provider when sending a transaction. `JsonRpcProvider` expects a pre-calculated ETH style tx hash. However, the algorithm we use to derive the result tx hash is different than traditional EVM world, causing the mismatch.
+
+**Suggested actions:**
+
+Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-providers#getting-started). For example:
+
+```javascript
+const provider = new EvmRpcProvider('chain node ws url');
+await provider.isReady();
+const signer = new ethers.Wallet('private key', provider);
+// send some transactions ...
+await provider.disconnect();
+```
+
+Note that `JsonRpcProvider` should still work in most cases, such as getting account balance, etc... The only senario that this error occur is when the operation internally calls `Provider.sendTransaction`.
+
+Also, it only occurs for `ethers.JsonRpcProvider`, and using other providers (such as metamask's provider) should be fine.
