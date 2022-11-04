@@ -40,26 +40,26 @@ As a result, the account with nonce 0 send a tx with nonce 4, which won't be min
 
 To solve this, we need to reset metamask after restarting local Mandala, so the nonce and cache will be cleared: `settings => advanced => reset account`. Or we can simply manually override the nonce to `0` for the first metamask tx after restarting the network.
 
-## I have balance on metamask, but transfer failed
-Metamask shows **all balances**, which might include non-transferable balances. For example if some of your ACA is staking, they will still show in metamask, but can't be transfered.
+## I have balance in metamask, but transfer failed
+Metamask shows **total balance**, which might include non-transferable balances. For example, if some of your ACA is staking, they will still show in metamask, but can't be transfered.
 
 We can check the transferable balance in the `Accounts` section in [polkadot.js app](../tooling/chain-explorer.md#polkadotjs-app)
 
 ## tx failing reason not showing in blockscout
 Every EVM+ transaction is essentially a substrate transaction, so we can find more details about it in [substrate chain explorer](../tooling/chain-explorer.md#substrate-chain-explorer).
 
-For example, for [this failing tx](https://blockscout.acala.network/tx/0xec304c62a61c56680522c09a80c7280fe4d985038203df70435cc925a7fe877f/internal-transactions), we can copy and paste the tx hash in the [Acala Subscan](https://acala.subscan.io/), which takes us to the [tx details page](https://acala.subscan.io/extrinsic/0xec304c62a61c56680522c09a80c7280fe4d985038203df70435cc925a7fe877f), the exact errro should show up in the bottom `Events` section.
+For example, for [this failing tx](https://blockscout.acala.network/tx/0xec304c62a61c56680522c09a80c7280fe4d985038203df70435cc925a7fe877f/internal-transactions), we can copy and paste the tx hash into the [Acala Subscan](https://acala.subscan.io/), which takes us to the [tx details page](https://acala.subscan.io/extrinsic/0xec304c62a61c56680522c09a80c7280fe4d985038203df70435cc925a7fe877f), the exact error should show up in the bottom `Events` section.
 
 In this case `ReserveStorageFailed` means account balance not enough.
 
 ![tx failed reason](../.gitbook/assets/subscan.png)
 
 ## how to check if a transaction is finalized?
-there are 3 ways:
+there are 2 ways:
 - use `eth_getBlockByNumber` with `finalized` block tag to get the latest finalized block number, and compare the tx block number with it.
 - use EVM+ specific RPC calls: [eth_isTransactionFinalized](../tooling/rpc-adapter/rpc-calls.md#custom-rpcs) or [eth_isBlockFinalized](../tooling/rpc-adapter/rpc-calls.md#custom-rpcs).
 
-## I have 20 ACA but contract deployment still failed
+## I have 20 ACA but contract deployment still failed with `ReserveStorageFailed`
 We recommend keeping 30+ ACA in account for contract deployment. This is because even if the actual deployment or contract call doesn't consume that much ACA, it still requires a little bit more when doing balance check. 
 
-For example it might first reserve 30 ACA, and the acutal operation takes 10 ACA, then the remaining 20 ACA will be refund.
+For example, the tx might first reserve 30 ACA, and the acutal operation takes 10 ACA, then the remaining 20 ACA will be refund.

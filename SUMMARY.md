@@ -72,7 +72,7 @@
 ## ✨ Special features
 
 * [Special features](special-features/special-features.md)
-* [Using Bodhi.js to deploy smart contract & interact with it](special-features/using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md)
+* [Using polkadot wallet to interact with EVM+](special-features/using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md)
 * [Batch EVM transactions](special-features/batch-evm-transactions.md)
 * [Updating unpublished smart contract](special-features/updating-unpublished-smart-contract.md)
 
@@ -81,3 +81,4 @@
 * [Common errors](miscellaneous/common-errors.md)
 * [ETHDenver](miscellaneous/ethdenver.md)
 * [Request support](miscellaneous/request-support.md)
+* [Feedback or suggestions?](miscellaneous/feedback.md)

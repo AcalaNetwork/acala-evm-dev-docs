@@ -10,7 +10,7 @@ There are three ways of running the RPC node in a local environment:
 
 1. [Using npm to run the RPC adapter as a package](running-the-rpc-adapter.md#running-the-rpc-adapter-as-a-package)
 2. [Building the RPC adapter from source](running-the-rpc-adapter.md#building-the-rpc-adapter-from-source)
-3. [Running the RPC adapter as a Docker container](running-the-rpc-adapter.md#undefined)
+3. [Running the RPC adapter as a Docker container](running-the-rpc-adapter.md#running-the-rpc-adapter-in-docker)
 
 ## Running the RPC adapter as a package
 
@@ -26,7 +26,7 @@ npx @acala-network/eth-rpc-adapter \
   --local-mode
 ```
 
-Flags can be appended to the command in order to adapt the default configuration to your needs. Flags are documented at the [bottom](running-the-rpc-adapter.md#undefined) of this page.
+Flags can be appended to the command in order to adapt the default configuration to your needs. Flags are documented at the [bottom](running-the-rpc-adapter.md#list-of-options) of this page.
 
 ## Building the RPC adapter from source
 

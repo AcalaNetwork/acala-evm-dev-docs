@@ -18,14 +18,14 @@ Alternatively you can go to [https://polkadot.js.org/apps/#/explorer](https://po
 
 You can put your EVM transaction hash at the end of these link to get the details:
 
-- [Mandala](https://acala-testnet.subscan.io/extrinsic/`)
-- [Karura](https://karura.subscan.io/extrinsic/)
-- [Acala](https://acala.subscan.io/extrinsic/)
+- [Mandala](https://acala-testnet.subscan.io`)
+- [Karura](https://karura.subscan.io)
+- [Acala](https://acala.subscan.io)
 
 ## EVM chain explorer
 
 Blockscout is our first official EVM chain block explorer.
 
-- [Mandala](https://blockscout.mandala.acala.network/`)
-- [Karura](https://blockscout.karura.network/)
-- [Acala](https://blockscout.acala.network/)
+- [Mandala](https://blockscout.mandala.acala.network`)
+- [Karura](https://blockscout.karura.network)
+- [Acala](https://blockscout.acala.network)
