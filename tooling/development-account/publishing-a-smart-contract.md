@@ -16,7 +16,9 @@ Only the contract's maintainer can publish it, no one else.
 The example below uses Mandala as example. For other networks, you will need to switch to different [Polkadot App](../chain-explorer.md#polkadotjs-app).
 {% endhint %}
 
-The deployment and publishing account of the **contract** have to be the same.
+{% hint style="info" %}
+Only the contract creator can publish it.
+{% endhint %}
 
 1. Under the **Submission** tab of [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics), select **evm** from the **extrinsic** dropdown menu
 2. Select **publishContract(contract)** from the method/action dropdown
@@ -38,7 +40,7 @@ Polkadot App can be used to verify whether or not the smart contract is publishe
 
 ![Developer > Chain state > Storage > evm > accounts(H160)](<../../.gitbook/assets/image (31).png>)
 
-The `published` value of the response indicates wether the smart contract is published or not.
+The `published` value of the response indicates whether the smart contract is published or not.
 
 ## Child smart contracts
 
