@@ -8,16 +8,13 @@ Contracts will initially only be accessible by the contract developers, a specia
 
 Once the contracts have been deployed and tested, they can be made public by paying a small amount of ACA in order for them to become publicly accessible.&#x20;
 
+{% hint style="info" %}
 Only the contract's maintainer can publish it, no one else.
-
+{% endhint %}
 ## Publish a contract
 
 {% hint style="info" %}
 The example below uses Mandala as example. For other networks, you will need to switch to different [Polkadot App](../chain-explorer.md#polkadotjs-app).
-{% endhint %}
-
-{% hint style="info" %}
-Only the contract creator can publish it.
 {% endhint %}
 
 1. Under the **Submission** tab of [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics), select **evm** from the **extrinsic** dropdown menu
