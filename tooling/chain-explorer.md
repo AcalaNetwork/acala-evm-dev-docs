@@ -14,6 +14,16 @@ description: Instructions on how to use the chain explorers of Acala EVM+
 
 Alternatively you can go to [https://polkadot.js.org/apps/#/explorer](https://polkadot.js.org/apps/#/explorer), and select the desired network from the top left corner's menu
 
+## EVM chain explorer
+
+Blockscout is our first official EVM chain block explorer.
+
+- [Mandala](https://blockscout.mandala.acala.network)
+- [Karura Testnet](https://blockscout.karura-dev.aca-dev.network/)
+- [Acala Testnet](https://blockscout.acala-dev.aca-dev.network/)
+- [Karura](https://blockscout.karura.network)
+- [Acala](https://blockscout.acala.network)
+
 ## Substrate chain explorer 
 
 You can put your EVM transaction hash at the end of these link to get the details:
@@ -21,11 +31,3 @@ You can put your EVM transaction hash at the end of these link to get the detail
 - [Mandala](https://acala-testnet.subscan.io)
 - [Karura](https://karura.subscan.io)
 - [Acala](https://acala.subscan.io)
-
-## EVM chain explorer
-
-Blockscout is our first official EVM chain block explorer.
-
-- [Mandala](https://blockscout.mandala.acala.network)
-- [Karura](https://blockscout.karura.network)
-- [Acala](https://blockscout.acala.network)
