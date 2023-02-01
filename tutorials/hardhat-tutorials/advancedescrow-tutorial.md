@@ -92,7 +92,7 @@ As we will be using the Mandala test network, we need to add it to `hardhat.conf
  }
 ```
 
-Let’s take a look at the network configurations:&#x20;
+Let’s take a look at the network configurations:
 
 * `url`: Used to specify the RPC endpoint of the network
 * `accounts`: Section to describe how Hardhat should acquire or derive the EVM accounts
@@ -210,7 +210,7 @@ Now we can add the event that will notify listeners of the change in the smart c
    );
 ```
 
-The event contains information about the current state of the latest escrow:&#x20;
+The event contains information about the current state of the latest escrow:
 
 * `initiator:` Address of the account that initiated the escrow
 * `beneficiary`: Address of the account to which the escrow should be released to
@@ -641,7 +641,7 @@ main()
 Now that we have the skeleton deploy script, we can import the `txParams` from the `transactionHelper` we added in the subsection above at the top of the file:
 
 ```javascript
-const { txParams } = require("../utils/transactionHelper");
+const { txParams } = require("../utils/transactionHelper");
 ```
 
 At the beginning of the `main` function definition, we will set the transaction parameters, by invoking the `txParams`:
@@ -1380,7 +1380,7 @@ touch scripts/userJourney.js
 Let’s add the imports and constants to the file:
 
 ```javascript
-const { txParams } = require("../utils/transactionHelper");
+const { txParams } = require("../utils/transactionHelper");
 const { ACA, AUSD, DOT } = require("@acala-network/contracts/utils/MandalaAddress");
 const { Contract } = require("ethers");
 const { formatUnits } = require("ethers/lib/utils");

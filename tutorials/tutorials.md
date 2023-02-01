@@ -20,8 +20,8 @@ Depending on which framework you prefer, there are slight modifications you need
 [truffle-tutorials](truffle-tutorials/)
 {% endcontent-ref %}
 
-{% content-ref url="waffle-tutorials/" %}
-[waffle-tutorials](waffle-tutorials/)
+{% content-ref url="waffle-tutorials.md" %}
+[waffle-tutorials.md](waffle-tutorials.md)
 {% endcontent-ref %}
 
 {% content-ref url="subgraph.md" %}

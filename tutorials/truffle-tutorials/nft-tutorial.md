@@ -14,7 +14,7 @@ description: A tutorial on how to build an ERC-721 compatible smart contract in 
 
 ## About
 
-This is an example that builds upon the [token](../waffle-tutorials/token-tutorial.md) example. `Token` was a simple example on building an ERC20 compatible token smart contract. `NFT` is an example of [ERC721](https://eips.ethereum.org/EIPS/eip-721) token implementation in Acala EVM+. We won't be building an administrated or upgradeable token and we will use OpenZeppelin [ERC721 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol). For the setup and naming, replace the `token` with `NFT`. Let's jump into it!
+This is an example that builds upon the [token](broken-reference) example. `Token` was a simple example on building an ERC20 compatible token smart contract. `NFT` is an example of [ERC721](https://eips.ethereum.org/EIPS/eip-721) token implementation in Acala EVM+. We won't be building an administrated or upgradeable token and we will use OpenZeppelin [ERC721 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol). For the setup and naming, replace the `token` with `NFT`. Let's jump into it!
 
 {% hint style="info" %}
 NOTE: You can refer to the complete code of this tutorial at [https://github.com/AcalaNetwork/truffle-tutorials/tree/master/NFT](https://github.com/AcalaNetwork/truffle-tutorials/tree/master/NFT)

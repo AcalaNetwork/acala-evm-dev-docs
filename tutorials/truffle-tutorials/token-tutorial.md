@@ -14,7 +14,7 @@ description: A tutorial on how to build an ERC-20 compatible smart contract in A
 
 ## About
 
-This is an example that builds upon the [echo example](../waffle-tutorials/echo-tutorial.md). `Echo` was a simple example on building an intreactable state changing smart contract. `Token` is an example of [ERC20](https://eips.ethereum.org/EIPS/eip-20) token implementation in Acala EVM+. We won't be building an administrated or upgradeable token and we will use OpenZeppelin [ERC20 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol). For the setup and naming, replace the `echo` with `token`. Let's jump into it!
+This is an example that builds upon the [echo example](broken-reference). `Echo` was a simple example on building an intreactable state changing smart contract. `Token` is an example of [ERC20](https://eips.ethereum.org/EIPS/eip-20) token implementation in Acala EVM+. We won't be building an administrated or upgradeable token and we will use OpenZeppelin [ERC20 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol). For the setup and naming, replace the `echo` with `token`. Let's jump into it!
 
 {% hint style="info" %}
 NOTE: You can refer to the complete code of this tutorial at [https://github.com/AcalaNetwork/truffle-tutorials/tree/master/token](https://github.com/AcalaNetwork/truffle-tutorials/tree/master/token)

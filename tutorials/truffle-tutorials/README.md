@@ -1,6 +1,6 @@
 # Truffle tutorials
 
-**If you are searching for** [**Waffle**](../waffle-tutorials/) **or** [**Hardhat**](../hardhat-tutorials/) **tutorial, please follow the links.**
+**If you are searching for** [**Waffle**](../waffle-tutorials.md) **or** [**Hardhat**](../hardhat-tutorials/) **tutorial, please follow the links.**
 
 ## Prerequisites
 

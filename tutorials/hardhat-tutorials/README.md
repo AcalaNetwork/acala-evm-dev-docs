@@ -6,7 +6,7 @@ description: Tutorials on how to use Hardhat to develop dApps on Acala EVM+.
 
 ### Hardhat Acala EVM+ development tutorials
 
-**If you are searching for** [**Truffle**](../truffle-tutorials/) **or** [**Waffle**](../waffle-tutorials/) **tutorial, please follow the links.**
+**If you are searching for** [**Truffle**](../truffle-tutorials/) **or** [**Waffle**](../waffle-tutorials.md) **tutorial, please follow the links.**
 
 ### Prerequisites
 

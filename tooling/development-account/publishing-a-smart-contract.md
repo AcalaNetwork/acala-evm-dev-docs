@@ -4,13 +4,14 @@ description: Making a smart contract public
 
 # Publishing a smart contract
 
-Contracts will initially only be accessible by the contract developers, a special role that anyone can opt-in to. 
+Contracts will initially only be accessible by the contract developers, a special role that anyone can opt-in to.
 
-Once the contracts have been deployed and tested, they can be made public by paying a small amount of ACA in order for them to become publicly accessible.&#x20;
+Once the contracts have been deployed and tested, they can be made public by paying a small amount of ACA in order for them to become publicly accessible.
 
 {% hint style="info" %}
 Only the contract's maintainer can publish it, no one else.
 {% endhint %}
+
 ## Publish a contract
 
 {% hint style="info" %}
@@ -22,7 +23,7 @@ The example below uses Mandala as example. For other networks, you will need to 
 3. Fill in the **contract** address
 4. Click **Submit Transaction**
 
-![Developer > Extrinsic > Submission > evm > publishContract(contract)](<../../.gitbook/assets/image (29).png>)
+![Developer > Extrinsic > Submission > evm > publishContract(contract)](<../../.gitbook/assets/image (1).png>)
 
 Trying to interact with an unpublished contract with an account that does not have the developer role will receive an `Error: -32603` with the `message: "Internal JSON-RPC error."`
 

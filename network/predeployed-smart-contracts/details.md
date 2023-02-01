@@ -1,20 +1,21 @@
 # Details
+
 This section contains details about each of predeployed contracts, including their addresses, explanation, and deployment status.
 
 deployment status:
-- <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> the predeployed smart contract is enabled and interactable with in the given network.
-- <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> the predeployed smart contract has not been enabled in the given network yet.
+
+* <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> the predeployed smart contract is enabled and interactable with in the given network.
+* <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> the predeployed smart contract has not been enabled in the given network yet.
 
 ## ERC20
+
 The predeployed ERC20 smart contracts allow you to interact with these token contract reliably on all of the Acala EVM+ chain. You can also use these addresses to add the tokens to your MetaMask or any other EVM wallet you might use with the Acala EVM+.
 
 The most up to date list of ERC20 addresses can be found in the [predeploy-contracts repository](https://github.com/AcalaNetwork/predeploy-contracts/tree/master/contracts/utils)
 
-|                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
-| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (36).png" alt="" data-size="line"> |
-
-
+|                                   Acala                                  |                                  Karura                                  |                                    Mandala                                   |
+| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+| <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14) (1).png" alt="" data-size="line"> |
 
 {% tabs %}
 {% tab title="Acala" %}
@@ -58,8 +59,6 @@ The most up to date list of ERC20 addresses can be found in the [predeploy-contr
 {% endtab %}
 
 {% tab title="Mandala" %}
-
-
 | Token              | Address                                    |
 | ------------------ | ------------------------------------------ |
 | ACA                | 0x0000000000000000000100000000000000000000 |
@@ -87,10 +86,9 @@ The most up to date list of ERC20 addresses can be found in the [predeploy-contr
 
 The DEX smart contract allows you to interact with the built in DEX of the Acala EVM+. You can take a look at [DEX tutorial](../../tutorials/truffle-tutorials/dex-tutorial.md) in order to see it in action.
 
-|                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
-| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (36).png" alt="" data-size="line"> |
-
+|                                   Acala                                  |                                  Karura                                  |                                    Mandala                                   |
+| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+| <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14) (1).png" alt="" data-size="line"> |
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
@@ -100,35 +98,33 @@ The DEX smart contract allows you to interact with the built in DEX of the Acala
 
 The EVM smart contract allows you to manage the development aspect of you account and the smart contracts that you deployed or are in control of. If you wish to see more about how the EVM predeployed smart contract works, you can take a look at the [EVM tutorial](../../tutorials/hardhat-tutorials/evm-tutorial.md).
 
-|                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
-| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (18).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (36).png" alt="" data-size="line"> |
+|                                   Acala                                  |                                    Karura                                    |                                    Mandala                                   |
+| :----------------------------------------------------------------------: | :--------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+| <img src="../../.gitbook/assets/image (14).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14) (2).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14) (1).png" alt="" data-size="line"> |
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
 | EVM            | 0x0000000000000000000000000000000000000800 |
 
 ## Oracle
+
 The Oracle predeployed smart contract allows you to get the prices of the supported tokens.
 
-|                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
-| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (18).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (36).png" alt="" data-size="line"> |
-
-
+|                                   Acala                                  |                                    Karura                                    |                                    Mandala                                   |
+| :----------------------------------------------------------------------: | :--------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+| <img src="../../.gitbook/assets/image (14).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14) (2).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14) (1).png" alt="" data-size="line"> |
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
 | ORACLE         | 0x0000000000000000000000000000000000000801 |
 
 ## Schedule
+
 The Schedule smart contract allows you to schedule the on-chain calls without the need for the off-chain interaction. To see the Schedule in action, you can take a look at the [Advanced escrow](../../tutorials/hardhat-tutorials/advancedescrow-tutorial.md) tutorial.
 
-|                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
-| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (36).png" alt="" data-size="line"> |
-
-
+|                                   Acala                                  |                                  Karura                                  |                                    Mandala                                   |
+| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+| <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (14) (1).png" alt="" data-size="line"> |
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
@@ -142,12 +138,9 @@ The Stable asset smart contract can be found at the address available above and 
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
 
-
-
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
 | STABLE\_ASSET  | 0x0000000000000000000000000000000000000804 |
-
 
 ## Homa
 
@@ -156,8 +149,6 @@ The Homa smart contract can be found at the address available above and you can 
 |                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
-
-
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
@@ -171,8 +162,6 @@ The EVM Accounts smart contract is used for simple account management and its so
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11).png" alt="" data-size="line"> |
 
-
-
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
 | EVM\_ACCOUNTS  | 0x0000000000000000000000000000000000000806 |
@@ -181,30 +170,22 @@ The EVM Accounts smart contract is used for simple account management and its so
 
 The Honzon bridge smart contract can be reached at the address above and its source code is available [here](https://github.com/AcalaNetwork/predeploy-contracts/blob/master/contracts/honzon/Honzon.sol).
 
-
 |                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
-
-
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
 | HONZON         | 0x0000000000000000000000000000000000000807 |
 
-
 ## Incentives
 
 The Incentives smart contract can be reached at the address above and its source code is available [here](https://github.com/AcalaNetwork/predeploy-contracts/blob/master/contracts/incentives/Incentives.sol).
+
 |                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
 
-
-
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
 | INCENTIVES     | 0x0000000000000000000000000000000000000808 |
-
-
-

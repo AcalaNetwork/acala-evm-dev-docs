@@ -1,10 +1,10 @@
 ---
 description: >-
   Section detailing the precompiled and predeployed smart contracts of the Acala
-  EVM/.
+  EVM+.
 ---
 
-# Precompiled and predeployed smart contracts
+# Predeployed smart contracts
 
 One of the great features of Acala EVM+ is the precompiled and the predeployed smart contracts.
 
@@ -30,7 +30,7 @@ And to use the precompiled smart contract within your script use the:
 const TokenContract = require("@acala-network/contracts/build/contracts/Token.json");
 ```
 
-For more information about how to use the precompiled smart contracts of the Acala EVM+ and how to interact with the predeployed smart contracts, please refer to [Hardhat](../../tutorials/hardhat-tutorials/), [Truffle](../../tutorials/truffle-tutorials/) or [Waffle](../../tutorials/waffle-tutorials/) tutorials.
+For more information about how to use the precompiled smart contracts of the Acala EVM+ and how to interact with the predeployed smart contracts, please refer to [Hardhat](../../tutorials/hardhat-tutorials/), [Truffle](../../tutorials/truffle-tutorials/) or [Waffle](../../tutorials/waffle-tutorials.md) tutorials.
 
 ## Predeployed smart contracts
 

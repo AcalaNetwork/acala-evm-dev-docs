@@ -4,13 +4,13 @@ The ethers.js library can be used to interact with the EVM+. In this example, we
 
 This will validate wether the provided address has the developer status enabled or not. If you wish to learn more about the [development accounts](../development-account/), you can read up about them.
 
-In order to be able to use the ethers.js library to interact with the [predeployed smart contract](../../network/precompiled-and-predeployed-smart-contracts/), we need to add it as well as the precompiled smart contracts to the projects:
+In order to be able to use the ethers.js library to interact with the [predeployed smart contract](broken-reference), we need to add it as well as the precompiled smart contracts to the projects:
 
 ```shell
 yarn --dev ethers @acala-network/contracts
 ```
 
-The following example imports the `ethers`.js library and instantiates the connection to the RPC node of the network. It also utilizes the [`ADDRESS`](../../network/precompiled-and-predeployed-smart-contracts/#address-utility) utility of `@acala-network/contracts` dependency and the precompiled `EVM` smart contract. We instantiate, call it using the `ethers.js` library and output the result:
+The following example imports the `ethers`.js library and instantiates the connection to the RPC node of the network. It also utilizes the [`ADDRESS`](broken-reference) utility of `@acala-network/contracts` dependency and the precompiled `EVM` smart contract. We instantiate, call it using the `ethers.js` library and output the result:
 
 ```typescript
 const { ethers } = require("ethers");
