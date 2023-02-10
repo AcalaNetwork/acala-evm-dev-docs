@@ -14,13 +14,13 @@ While we will to outline as much of the security considerations as we can, there
 
 ### 1. Double entry consideration
 
-Our native tokens ACA and KAR have a mirrored [predeployed smart contract](../network/precompiled-and-predeployed-smart-contracts/), which means that a change in balance of the native currency is also reflected in the mirrored ERC20 predeployed smart contract and vice versa. A DeFi protocol that supports operation of the native currency as well as the predeployed ERC20 smart contracts may encounter unexpected or unreliable behaviour because of this.
+Our native tokens ACA and KAR have a mirrored [predeployed smart contract](../network/predeployed-smart-contracts/details.md), which means that a change in balance of the native currency is also reflected in the mirrored ERC20 predeployed smart contract and vice versa. A DeFi protocol that supports operation of the native currency as well as the predeployed ERC20 smart contracts may encounter unexpected or unreliable behaviour because of this.
 
 We suggest to disable operations with native currency and only support the mirrored ERC20 version.
 
 ### 2. Dust balance consideration
 
-All of our mirror tokens, as well as the native tokens, have [existential deposit](https://wiki.acala.network/get-started/acala-network/acala-account#existential-deposit). This means that the balance of an account that falls below the threshold will be 'dusted'. This preserves space of chaindata and ensures that there are no accounts with balances lower than the cost of transferring these balances; if an account has balance lower than the transaction cost needed to clear the balance, the record of this balance can never be cleared.
+All of our mirror tokens and native tokens, have [existential deposit](https://wiki.acala.network/get-started/acala-network/acala-account#existential-deposit). This means that the balance of an account that falls below the threshold will be 'dusted'. This preserves space of chaindata and ensures that there are no accounts with balances lower than the cost of transferring these balances; if an account has balance lower than the transaction cost needed to clear the balance, the record of this balance can never be cleared.
 
 Not accounting for existential deposit can lead to mismatched numbers in your own protocol records or to transactions failing unexpectedly.
 
@@ -69,7 +69,7 @@ We suggest that, if your dApp processes the transaction hashes, make sure that i
 The intertwining of the Substrate level and the EVM level means that, for users to access the full functionality of Acala's networks, their Substrate and EVM accounts need to be bound. Some of the Substrate assets might return an EVM asset to the account. When this happens the EVM assets are allocated to the EVM account associated to the Substrate account. If no such binding exists, the default EVM account will be bound to it.
 
 {% hint style="info" %}
-The default EVM account can only be used to [interact with the EVM through Substrate calls](../special-features/using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md) and cannot be imported into an EVM wallet as no private key or mnemonic to generate it from is available.
+The default EVM account can only be used to [interact with the EVM through Substrate calls](../special-features/using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md) and cannot be imported into an EVM wallet as no private key nor mnemonic are available.
 {% endhint %}
 
 The assets associated with the default EVM address are fully interactable with, but can't be managed by the EVM wallet. This means that unlocking their full functionality might require user to transfer them, to a wallet they are able to restore, one by one.
