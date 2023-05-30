@@ -20,7 +20,7 @@ This section assumes you are using the dockerized local development network desc
 
 ## Mandala Testnet TC9
 
-| **Name**            | Mandala TC8                                       |
+| **Name**            | Mandala TC9                                       |
 | ------------------- | ------------------------------------------------- |
 | **Node Endpoint**   | `wss://mandala-tc9-rpc.aca-staging.network`     |
 | **ETH RPC Endpoint**             | `https://eth-rpc-tc9.aca-staging.network`     |
