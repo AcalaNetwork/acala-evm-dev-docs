@@ -46,7 +46,7 @@ This section assumes you are using the dockerized local development network desc
 
 | **Name**            | Karura Testnet                                    |
 | ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://karura-dev.aca-dev.network/rpc/ws`  |
+| **Node Endpoint**             | `wss://karura-testnet.aca-staging.network/rpc/karura/ws`  |
 | **ETH RPC Endpoint**             | `https://eth-rpc-karura-testnet.aca-staging.network`  |
 | **WS Endpoint**   | `wss://eth-rpc-karura-testnet.aca-staging.network`  |
 | **Explorer**        | `https://blockscout.karura-dev.aca-dev.network`       |
@@ -70,7 +70,7 @@ This section assumes you are using the dockerized local development network desc
 
 | **Name**            | Karura                                     |
 | ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://karura-testnet.aca-staging.network/rpc/karura/ws`  |
+| **Node Endpoint**             | `wss://karura-rpc-0.aca-api.network`  |
 | **ETH RPC Endpoint**             | `https://eth-rpc-karura.aca-api.network`  |
 | **WS Endpoint**   | `wss://eth-rpc-karura.aca-api.network`  |
 | **Explorer**        | `https://blockscout.karura.network`       |
