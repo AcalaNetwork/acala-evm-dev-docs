@@ -25,7 +25,7 @@ This section assumes you are using the dockerized local development network desc
 | **Node Endpoint**   | `wss://mandala-tc9-rpc.aca-staging.network`     |
 | **ETH RPC Endpoint**             | `https://eth-rpc-tc9.aca-staging.network`     |
 | **WS Endpoint**   | `wss://eth-rpc-tc9.aca-staging.network`       |
-| **Explorer**        | TBA        |
+| **Explorer**        | https://blockscout.mandala.aca-staging.network  |
 | **Subquery**    | `https://subql-query-tc9.aca-staging.network` |
 | **Chan ID**         | 595                                               |
 | **Symbol**          | mACA     
