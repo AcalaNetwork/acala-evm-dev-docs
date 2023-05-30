@@ -18,7 +18,19 @@ This section assumes you are using the dockerized local development network desc
 | **Chain ID**        | 595                     |
 | **Symbol**          | mACA                     |
 
-## Mandala Testnet 
+## Mandala Testnet TC9
+
+| **Name**            | Mandala TC8                                       |
+| ------------------- | ------------------------------------------------- |
+| **Node Endpoint**   | `wss://mandala-tc9-rpc.aca-staging.network`     |
+| **ETH RPC Endpoint**             | `https://eth-rpc-tc9.aca-staging.network`     |
+| **WS Endpoint**   | `wss://eth-rpc-tc9.aca-staging.network`       |
+| **Explorer**        | TBA        |
+| **Subquery**    | `https://subql-query-tc9.aca-staging.network` |
+| **Chan ID**         | 595                                               |
+| **Symbol**          | mACA     
+                                          |
+## Mandala Testnet (old)
 
 | **Name**            | Mandala TC8                                       |
 | ------------------- | ------------------------------------------------- |
@@ -58,7 +70,7 @@ This section assumes you are using the dockerized local development network desc
 
 | **Name**            | Karura                                     |
 | ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://karura-rpc-0.aca-api.network`  |
+| **Node Endpoint**             | `wss://karura-testnet.aca-staging.network/rpc/karura/ws`  |
 | **ETH RPC Endpoint**             | `https://eth-rpc-karura.aca-api.network`  |
 | **WS Endpoint**   | `wss://eth-rpc-karura.aca-api.network`  |
 | **Explorer**        | `https://blockscout.karura.network`       |
