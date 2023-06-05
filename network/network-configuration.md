@@ -18,7 +18,19 @@ This section assumes you are using the dockerized local development network desc
 | **Chain ID**        | 595                     |
 | **Symbol**          | mACA                     |
 
-## Mandala Testnet 
+## Mandala Testnet TC9
+
+| **Name**            | Mandala TC9                                       |
+| ------------------- | ------------------------------------------------- |
+| **Node Endpoint**   | `wss://mandala-tc9-rpc.aca-staging.network`     |
+| **ETH RPC Endpoint**             | `https://eth-rpc-tc9.aca-staging.network`     |
+| **WS Endpoint**   | `wss://eth-rpc-tc9.aca-staging.network`       |
+| **Explorer**        | https://blockscout.mandala.aca-staging.network  |
+| **Subquery**    | `https://subql-query-tc9.aca-staging.network` |
+| **Chan ID**         | 595                                               |
+| **Symbol**          | mACA     
+                                          |
+## Mandala Testnet (old)
 
 | **Name**            | Mandala TC8                                       |
 | ------------------- | ------------------------------------------------- |
@@ -34,10 +46,10 @@ This section assumes you are using the dockerized local development network desc
 
 | **Name**            | Karura Testnet                                    |
 | ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://karura-dev.aca-dev.network/rpc/ws`  |
+| **Node Endpoint**             | `wss://karura-testnet.aca-staging.network/rpc/karura/ws`  |
 | **ETH RPC Endpoint**             | `https://eth-rpc-karura-testnet.aca-staging.network`  |
 | **WS Endpoint**   | `wss://eth-rpc-karura-testnet.aca-staging.network`  |
-| **Explorer**        | `https://blockscout.karura-dev.aca-dev.network`       |
+| **Explorer**        | `https://blockscout.karura-testnet.aca-staging.network`       |
 | **Subquery**    | `https://subql-query-karura-testnet.aca-staging.network` |
 | **Chan ID**         | 596                                        |
 | **Symbol**          | KAR                                        |
