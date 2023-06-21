@@ -76,6 +76,10 @@
 * [Batch EVM transactions](special-features/batch-evm-transactions.md)
 * [Updating unpublished smart contract](special-features/updating-unpublished-smart-contract.md)
 
+## ✨ Applications
+
+* [Asset Router](applications/asset-router.md)
+
 ## 🔎 Miscellaneous
 * [FAQs](miscellaneous/FAQs.md)
 * [Common errors](miscellaneous/common-errors.md)
