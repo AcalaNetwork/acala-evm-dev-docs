@@ -78,9 +78,10 @@
 
 ## 💻 Applications
 
-* [Asset Router](applications/asset-router.md)
+* [Acala Multichain Asset Router](applications/asset-router.md)
 
 ## 🔎 Miscellaneous
+
 * [FAQs](miscellaneous/FAQs.md)
 * [Common errors](miscellaneous/common-errors.md)
 * [ETHDenver](miscellaneous/ethdenver.md)

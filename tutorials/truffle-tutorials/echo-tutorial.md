@@ -240,7 +240,7 @@ contract("Echo", function (/* accounts */) {
 
 </details>
 
-****
+
 
 {% hint style="warning" %}
 **NOTE: You need to add a deployment script for `Echo` before you can run the tests.**
