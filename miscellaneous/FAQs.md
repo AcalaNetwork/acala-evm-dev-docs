@@ -19,19 +19,7 @@ Also, logs are **NOT** cached (we will probably implement log cache in the futur
 ![Cache vs. SubQuery representation](../.gitbook/assets/wiki.png)
 
 ## why tx failed after I manually changed gas params in metamask?
-The main difference between Acala EVM+ and legacy EVM is that we need to use pre-computed `gasPrice` and `gasLimit` combination. Manually inputting random gas parameters will fail to decode. Please refer to [gas parameter](../network/gas-parameters.md) section for detailed explanations.
-
-## how to fetch valid gas params in different senarios
-There are usually 3 ways to fetch the gas params ([more info](../network/gas-parameters.md#for-developers)): 
-- Using an RPC call
-- Using hardcoded values
-- Using an SDK helper
-
-They are suitable for different senarios:
-- **in Dapp**: we suggest to use the **RPC call** to avoid importing extra dependencies of `@acala-network/eth-providers`.
-- **in truffle**: we suggest to use **hardcoded values** in config to  override gas params globally, which is equivalent to starting the rpc adapter in [rich mode](../tooling/rpc-adapter/running-the-rpc-adapter.md#rich-mode) for local testing. ([tutorials](../tutorials/truffle-tutorials/))
-- **in hardhat**: unlike truffle, hardhat doesn't support passing hardcoded global gas overrides in config, so we suggest to start the rpc adapter in [rich mode](../tooling/rpc-adapter/running-the-rpc-adapter.md#rich-mode) for local testing. Use the **SDK helper** or **hardcoded value** to override each tx gas in production scripts. ([tutorials](../tutorials/hardhat-tutorials/))
-
+Acala EVM+ uses encoded `gasPrice` and `gasLimit`, so manually inputting random gas parameters might fail to decode. Please refer to [gas parameter](../network/gas-parameters.md) section for detailed explanations.
 
 ## why metamask tx doesn't confirm with local mandala?
 Metamask will sometimes cache the nonce locally, which is used to infer next tx nonce. For example, if we send a tx with nonce 3, metamask will set nonce 4 for next tx. However, after we restart the local mandala node, all accounts are reset and the nonce is back to 0, but metamaks doesn't know it! 
@@ -58,8 +46,3 @@ In this case `ReserveStorageFailed` means account balance not enough.
 there are 2 ways:
 - use `eth_getBlockByNumber` with `finalized` block tag to get the latest finalized block number, and compare the tx block number with it.
 - use EVM+ specific RPC calls: [eth_isTransactionFinalized](../tooling/rpc-adapter/rpc-calls.md#custom-rpcs) or [eth_isBlockFinalized](../tooling/rpc-adapter/rpc-calls.md#custom-rpcs).
-
-## I have 20 ACA but contract deployment still failed with `ReserveStorageFailed`
-We recommend keeping 30+ ACA in account for contract deployment. This is because even if the actual deployment or contract call doesn't consume that much ACA, it still requires a little bit more when doing balance check. 
-
-For example, the tx might first reserve 30 ACA, and the acutal operation takes 10 ACA, then the remaining 20 ACA will be refund.

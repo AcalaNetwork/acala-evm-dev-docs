@@ -17,8 +17,8 @@ Node endpoints and subquery urls can be found in [network configuration](../netw
 For example to connect to Mandala testnet:
 ```shell
 npx @acala-network/eth-rpc-adapter \
-  --endpoint wss://mandala-rpc.aca-staging.network/ws \
-  --subql https://subql-query-mandala.aca-staging.network
+  --endpoint wss://mandala-tc9-rpc.aca-staging.network \
+  --subql https://subql-query-tc9.aca-staging.network
 ```
 
 Also checkout the help command for more details

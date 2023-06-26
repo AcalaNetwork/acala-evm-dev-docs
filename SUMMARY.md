@@ -44,31 +44,9 @@
   * [Web3.js usage example](tooling/interaction-libraries/web3.js-usage-example.md)
   * [Ethers.js usage example](tooling/interaction-libraries/ethers.js-usage-example.md)
 
-## 🎓 Tutorials
+## 🎓 Examples
 
-* [Tutorials](tutorials/tutorials.md)
-* [Hardhat tutorials](tutorials/hardhat-tutorials/README.md)
-  * [HelloWorld tutorial](tutorials/hardhat-tutorials/helloworld-tutorial.md)
-  * [Echo tutorial](tutorials/hardhat-tutorials/echo-tutorial.md)
-  * [Token tutorial](tutorials/hardhat-tutorials/token-tutorial.md)
-  * [NFT tutorial](tutorials/hardhat-tutorials/nft-tutorial.md)
-  * [PrecompiledToken tutorial](tutorials/hardhat-tutorials/precompiledtoken-tutorial.md)
-  * [DEX tutorial](tutorials/hardhat-tutorials/dex-tutorial.md)
-  * [EVM tutorial](tutorials/hardhat-tutorials/evm-tutorial.md)
-  * [AdvancedEscrow tutorial](tutorials/hardhat-tutorials/advancedescrow-tutorial.md)
-  * [UpgradeableGreeter tutorial](tutorials/hardhat-tutorials/upgradeablegreeter-tutorial.md)
-* [Truffle tutorials](tutorials/truffle-tutorials/README.md)
-  * [HelloWorld tutorial](tutorials/truffle-tutorials/helloworld-tutorial.md)
-  * [Echo tutorial](tutorials/truffle-tutorials/echo-tutorial.md)
-  * [Token tutorial](tutorials/truffle-tutorials/token-tutorial.md)
-  * [NFT tutorial](tutorials/truffle-tutorials/nft-tutorial.md)
-  * [PrecompiledToken tutorial](tutorials/truffle-tutorials/precompiledtoken-tutorial.md)
-  * [DEX tutorial](tutorials/truffle-tutorials/dex-tutorial.md)
-  * [EVM tutorial](tutorials/truffle-tutorials/evm-tutorial.md)
-  * [Advanced Escrow tutorial](tutorials/truffle-tutorials/advanced-escrow-tutorial.md)
-* [Waffle tutorials](tutorials/waffle-tutorials.md)
-* [Subgraph](tutorials/subgraph.md)
-
+* [Examples](tutorials/examples.md)
 ## ✨ Special features
 
 * [Special features](special-features/special-features.md)

@@ -28,19 +28,7 @@ This section assumes you are using the dockerized local development network desc
 | **Explorer**        | https://blockscout.mandala.aca-staging.network  |
 | **Subquery**    | `https://subql-query-tc9.aca-staging.network` |
 | **Chan ID**         | 595                                               |
-| **Symbol**          | mACA     
-                                          |
-## Mandala Testnet (old)
-
-| **Name**            | Mandala TC8                                       |
-| ------------------- | ------------------------------------------------- |
-| **Node Endpoint**   | `wss://mandala-rpc.aca-staging.network/ws`     |
-| **ETH RPC Endpoint**             | `https://eth-rpc-mandala.aca-staging.network`     |
-| **WS Endpoint**   | `wss://eth-rpc-mandala.aca-staging.network`       |
-| **Explorer**        | `https://blockscout.mandala.acala.network`        |
-| **Subquery**    | `https://subql-query-mandala.aca-staging.network` |
-| **Chan ID**         | 595                                               |
-| **Symbol**          | mACA                                               |
+| **Symbol**          | mACA                                              |
 
 ## Karura Testnet
 
@@ -70,7 +58,7 @@ This section assumes you are using the dockerized local development network desc
 
 | **Name**            | Karura                                     |
 | ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://karura-rpc-0.aca-api.network`  |
+| **Node Endpoint**             | `wss://karura-rpc.aca-api.network`  |
 | **ETH RPC Endpoint**             | `https://eth-rpc-karura.aca-api.network`  |
 | **WS Endpoint**   | `wss://eth-rpc-karura.aca-api.network`  |
 | **Explorer**        | `https://blockscout.karura.network`       |
@@ -90,7 +78,7 @@ There is also a developer-facing beta version that usually contains some latest 
 
 | **Name**            | Acala                                     |
 | ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://acala-rpc-0.aca-api.network`  |
+| **Node Endpoint**             | `wss://acala-rpc.aca-api.network`  |
 | **ETH RPC Endpoint**             | `https://eth-rpc-acala.aca-api.network`  |
 | **WS Endpoint**   | `wss://eth-rpc-acala.aca-api.network`  |
 | **Explorer**        | `https://blockscout.acala.network`       |

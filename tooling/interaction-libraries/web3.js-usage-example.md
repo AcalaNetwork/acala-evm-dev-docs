@@ -14,7 +14,7 @@ The following example imports the web3.js library and instantiates the connectio
 
 ```typescript
 const Web3 = require("web3");
-const web3 = new Web3("https://eth-rpc-mandala.aca-staging.network");
+const web3 = new Web3("https://eth-rpc-tc9.aca-staging.network");
 const { EVM } = require("@acala-network/contracts/utils/Address");
 const EVMContract = require("@acala-network/contracts/build/contracts/EVM.json");
 
