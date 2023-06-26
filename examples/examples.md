@@ -1,12 +1,12 @@
 ---
-description: Start using your preferred development framework with Acala EVM+.
+description: Start using your preferred development framework and toolings with Acala EVM+.
 ---
 
 # Examples
 
 Acala EVM+ is built in a way that is developer-friendly, this means that you can use any development framework that you prefer and develop, test and deploy onto our network.
 
-Depending on which framework you prefer, there are slight modifications you need to implement in order to get access to the full power of the Acala EVM+. To understand them, check out the following guides and start your development journey on Acala EVM+.
+Depending on which framework/tooling you prefer, there are slight modifications you need to implement in order to get access to the full power of the Acala EVM+. To understand them, check out the following guides and start your development journey on Acala EVM+.
 
 - Framework Examples
   - [hardhat](https://github.com/AcalaNetwork/hardhat-tutorials)

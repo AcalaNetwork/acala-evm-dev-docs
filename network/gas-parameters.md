@@ -1,19 +1,20 @@
-# Gas parameters
+# Gas Parameters
 
-The main difference between Acala EVM+ and legacy EVM is that we need to use encoded `gasPrice` and `gasLimit` (we will refer them as "gas parameters"). Manually inputting random gas parameters is discouraged.
+The primary distinction between Acala EVM+ and the legacy EVM lies in the usage of encoded `gasPrice` and `gasLimit`, together referred to as "gas parameters".
 
 ## Context
 
-As Acala EVM+ is running on a substrate chain, gas parameters need to encode four substrate parameters: `gasLimit`, `storageLimit`, `validUntil`, and `tip`. We need to provide a delicate `gasPrice` to `gasLimit`, so that they can be decoded correctly into the substrate parameters. Randomly changing gas parameters might result in a bad parameter decoding.
+Acala EVM+ operates on a substrate chain. Consequently, the gas parameters must encode four substrate parameters: `gasLimit`, `storageLimit`, `validUntil`, and `tip`. It's crucial to supply precise `gasPrice` to `gasLimit` values to ensure accurate decoding into substrate parameters. Arbitrary changes to these parameters could lead to incorrect decoding.
 
-For example, when user sends a transaction with gas parameter
+For instance, when a user sends a transaction with the following gas parameters:
 ```
 {
   gasPrice: 100.004623375 gwei,
   gasLimit: 100106,
 }
 ```
-these gas parameters will be decoded to substrate params
+
+These parameters are decoded into substrate parameters as follows:
 ```
 {
   validUntil: 4623375,
@@ -23,32 +24,32 @@ these gas parameters will be decoded to substrate params
 }
 ```
 
-Although this part is incompatible with the legacy EVM, it is actually an advantage of the Acala EVM+, which is able to utilise some features that cannot be found in the legacy EVM. By using `validUntil` parameter we can avoid transaction being stuck in the transaction pool indefinitely, and by using `storageLimit` we are able to encourage the developers to remove the data they don't need from the chain, in order to reduce the chain bloat.
+Despite being inconsistent with the legacy EVM, this aspect is advantageous for Acala EVM+. It utilizes features unavailable in the legacy EVM. For example, the `validUntil` parameter prevents transactions from indefinitely lingering in the transaction pool. Additionally, the `storageLimit` encourages developers to remove redundant data from the chain, thereby reducing chain bloat.
 
-## Getting the Gas parameters
-
+## Retrieving Gas Parameters
 ### for users
 
-Users never need to compute gas parameters by themselves:
+Users are not required to calculate gas parameters:
 
-* When sending tokens, MetaMask will call the RPC endpoints to get the correct gas parameters for them automatically.
-* When signing a transaction, dApps will provide the correct gas parameters and pass these values to the MetaMask, so users just sign a valid transaction.
+- When sending tokens, MetaMask automatically retrieves the correct gas parameters by calling ETH RPC endpoints.
+- During transaction signing, dApps provide the correct gas parameters to MetaMask, enabling users to sign a valid transaction.
 
-The only thing that need to pay attention to, is to not randomly modify the transaction parameters within MetaMask, otherwise the transaction will fail due to bad decoding. We thus encourage you to add the warning against such actions within the user interface of your dApps.
+However, users should avoid arbitrary modification of transaction parameters within MetaMask, as it could lead to transaction failure due to incorrect decoding. We recommend highlighting this warning within your dApp's user interface.
 
 ### for developers
 
-Most toolings and libraries (such as `ethers`, `hardhat`, `truffle`) should automatically compute the correct gas parameters under the hood when sending a transaction, so developers usually don't need to do anything.
+Most tools and libraries (like `ethers`, `hardhat`, `truffle`) automatically calculate the correct gas parameters when sending a transaction. Developers typically do not need to intervene.
 
-In case gas params are not auto computed, developers can easily compute the gas parameters in the following way:
+If gas parameters are not auto-computed, developers can calculate them as follows:
+
 ```ts
 const gasPrice = await provider.getGasPrice();
 const gasLimit = await contractInstance.estimateGas.functionName(...args);
 ```
 
 ## Gas Decoding Details
-### when there is no tip (default case)
-Let's say eth `gasLimit` is encoded as `aaaabbbcc` and gasPrice is encoded as `100yyyyyyyyy`, which can be decoded to substrate gas params as following:
+### without tip (default case)
+Assume the Ethereum gasLimit is encoded as `aaaabbbcc` and gasPrice is encoded as `100yyyyyyyyy`. They can be decoded into substrate gas parameters as follows:
 - `validUntil = yyyyyyyyy`
 - `gasLimit = 30000 * bbb`
 - `storageLimit = 2^min(21, cc)`
@@ -70,8 +71,8 @@ will be decoded as
 }
 ```
 
-### when there is tip
-`gasLimit` won't be affected by tip, since tip is encoded into gasPrice `ab0yyyyyyyyy`.
+### with tip
+The `gasLimit` remains unaffected by the tip, as the tip is encoded into `gasPrice` as `ab0yyyyyyyyy`.
 - `tip = (ab0 / 100 - 1)% of the original cost`
 
 for example:
@@ -91,16 +92,16 @@ will be decoded as
 }
 ```
 
-## Gas Modification
+## Modifying Gas Parameters
 ### for users
-It generally not recommded for users to modify the gas parameters manually, since it might result in bad decoding. Dapps should trigger signature request with valid gas params, so users won't need to worry about gas calculation at all. However, if a user is familiar with the encoding, he can still manually modify `ab0` part of the gasPrice to increase tip, which can speed up the transaction when network is busy.
+Users generally should avoid manually modifying gas parameters to prevent incorrect decoding. dApps should initiate signature requests with valid gas parameters, relieving users of any concern about gas calculation. Nonetheless, knowledgeable users can manually modify the `ab0` part of the gasPrice to increase the tip, which can expedite the transaction when the network is busy.
 
 ### for developers
-Developers can provide different priority options for users, and compute the corresponding gasPrice for users, so users themselves don't need to modify the gas parameters manually. For example:
-- default priority: `ab0 = 100`, in which case gasPrice is calculated automatically by the tooling
+Developers can offer different priority options to users and compute the corresponding `gasPrice`, eliminating the need for users to manually modify gas parameters. For instance:
+- default priority: `ab0 = 100`, in which case gasPrice is calculated automatically by the toolings
 - high priority: `ab0 = 120`, in which case tip = 20% of the original cost
 - super high priority: `ab0 = 200`, in which case tip = 100% of the original cost
 
-However, if developers decide not to provide such options, they can just use the default gasPrice direclty.
+If developers choose not to offer such options, they can use the default gasPrice directly.
 
-Developers should also calculate valid gasLimit for users when prompt user signature. Usually gasLimit should also be calcualted automatically by the toolings, but if not, developers can simply hardcode a valid gasLimit instead (this should rarely happen, if so please report to Acala team). For example, if auto calculated `gasLimit = 100106` failed the transaction with error `storage limit not enough`, that means the transaction requires more storage than the auto computed `storageLimit = 2 ^ 6 = 64`, and let's say the actually storage cost is 100, devs can use `cc = 7` instead, so gasLimit becomes `100107`.
+When prompting user signatures, developers should also calculate a valid gasLimit. Most often, the tools should auto-calculate the gasLimit. If not, developers can hardcode a valid gasLimit (a rare occurrence, but if it happens, please report to the Acala team). For example, if an auto-calculated `gasLimit = 100106` fails the transaction with an error like `storage limit not enough`, it implies the transaction requires more storage than the auto-computed storageLimit = `2 ^ 6 = 64`. If the actual storage cost is `100`, developers can use `cc = 7`, making `gasLimit = 100107`.
