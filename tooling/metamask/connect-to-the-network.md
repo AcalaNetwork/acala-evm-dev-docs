@@ -43,7 +43,7 @@ This should open up a form to add a new network to your MetaMask (you might have
 | **New RPC URL**        | `https://eth-rpc-tc9.aca-staging.network` |   |
 | **Chain ID**           | 595                                                      |   |
 | **Currency symbol**    | mACA                                                     |   |
-| **Block Explorer URL** | `https://blockscout.mandala.acala.network/`              |   |
+| **Block Explorer URL** | `https://blockscout.mandala.aca-staging.network/`        |   |
 
 ![Mandala TC8 connection details](<../../.gitbook/assets/Screenshot 2022-07-07 at 11.48.11.png>)
 
