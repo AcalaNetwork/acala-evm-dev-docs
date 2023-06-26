@@ -27,7 +27,7 @@ Although this part is incompatible with the legacy EVM, it is actually an advant
 
 ## Getting the Gas parameters
 
-### For users
+### for users
 
 Users never need to compute gas parameters by themselves:
 
@@ -36,7 +36,7 @@ Users never need to compute gas parameters by themselves:
 
 The only thing that need to pay attention to, is to not randomly modify the transaction parameters within MetaMask, otherwise the transaction will fail due to bad decoding. We thus encourage you to add the warning against such actions within the user interface of your dApps.
 
-### For developers
+### for developers
 
 Most toolings and libraries (such as `ethers`, `hardhat`, `truffle`) should automatically compute the correct gas parameters under the hood when sending a transaction, so developers usually don't need to do anything.
 

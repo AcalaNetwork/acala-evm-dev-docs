@@ -46,7 +46,7 @@
 
 ## 🎓 Examples
 
-* [Examples](tutorials/examples.md)
+* [Examples](examples/examples.md)
 ## ✨ Special features
 
 * [Special features](special-features/special-features.md)
