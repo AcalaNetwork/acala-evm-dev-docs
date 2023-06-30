@@ -12,14 +12,23 @@ There are three ways of running the RPC node in a local environment:
 2. [Building the RPC adapter from source](running-the-rpc-adapter.md#building-the-rpc-adapter-from-source)
 3. [Running the RPC adapter as a Docker container](running-the-rpc-adapter.md#running-the-rpc-adapter-in-docker)
 
-## Running the RPC adapter as a package
-
 {% hint style="warning" %}
-Instructions below assumes a local mandala node is already running at `ws://localhost:9944`. ([how?](../../network/network-setup/local-development-network.md))
+In previous [local development setup](../../network/network-setup/local-development-network.md) section, we run the whole stack (node + subquery + rpc adapter) with docker compose, which already includes the RPC adapter. This sections is for those who want to run the RPC adapter separately, or learn more about the RPC adapter.
 {% endhint %}
 
-Running the RPC adapter as a package allows you to use the RPC adapter without having to set up anything else. To run it in a this way, use:
+## local mandala node
+RPC adapter needs to connect to a node, so we first run a local mandala node at port `9944`
+```
+docker run -it --rm -p 9944:9944 -p 9933:9933 ghcr.io/acalanetwork/mandala-node:sha-a32c40b --dev --ws-external --rpc-port=9933 --rpc-external --rpc-cors=all --rpc-methods=unsafe -levm=debug --pruning=archive --instant-sealing
+```
 
+## Running the RPC adapter
+### with docker
+```shell
+docker run -it --rm -e LOCAL_MODE=1 -p 8545:8545 acala/eth-rpc-adapter:v2.7.4 yarn start
+```
+
+### or as an npm package
 ```shell
 npx @acala-network/eth-rpc-adapter \
   --endpoint ws://localhost:9944 \
@@ -27,47 +36,12 @@ npx @acala-network/eth-rpc-adapter \
 ```
 
 Flags can be appended to the command in order to adapt the default configuration to your needs. Flags are documented at the [bottom](running-the-rpc-adapter.md#list-of-options) of this page.
-
-## Building the RPC adapter from source
-
-Building the RPC adapter from source requires you to first clone the [bodhi.js](https://github.com/AcalaNetwork/bodhi.js) repository:
-
-```shell
-git clone --recurse-submodules git@github.com:AcalaNetwork/bodhi.js.git
-```
-
-Once the repository is cloned install the necessary dependencies as well as build the adapter:
-
-{% hint style="warning" %}
-In order to be able to locally build the RPC adapter, you are required to have [@microsoft/rush](https://rushjs.io/pages/intro/get\_started/) installed.
-{% endhint %}
-
-```shell
-rush update
-rush build -t @acala-network/eth-rpc-adapter
-```
-The RPC adapter is ready run:
-
-```shell
-cd eth-rpc-adapter
-yarn start --local-mode [--other-options]
-```
-
-## Running the RPC adapter in Docker
-
-Running the RPC adapter in Docker required Docker to be running and issuing the following command:
-
-```shell
-docker run -it --rm -e LOCAL_MODE=1 -p 8545:8545 acala/eth-rpc-adapter:v2.5.3 yarn start
-```
-
 ## Options
 
 Options can be passed to the RPC adapter in three ways:
 
 1. As CLI options (recommended)
 2. As environment variables
-3. As environment variables in the `.env` file
 
 ### Passing the options as CLI options
 
@@ -83,19 +57,10 @@ If you wish to pass the options as environment variables in the terminal, you ca
 
 ```shell
 export ENDPOINT_URL=ws://localhost:9944
-LOCAL_MODE=1 yarn start
+LOCAL_MODE=1 npx @acala-network/eth-rpc-adapter
 ```
 
 Both the environment variable that is defined by itself as well as the one defined inline with the `yarn start` will be used in this case.
-
-### Setting the options as variables in the `.env` file
-
-In case you are building the RPC adapter from source, you can set the options as variables within the `.env` file, like this
-
-```
-ENDPOIN_URL=ws://localhost:9944
-LOCAL_MODE=1
-```
 
 ### List of options
 
@@ -127,12 +92,3 @@ In this mode, Txs and logs can only be found after they are finalized. Now depre
 
 #### local mode
 For local testing, we usually turn this mode on, together with a local `--instant-sealing` mandala node. It has some optimization to run faster with local node, and some minor bug prevention.
-
-#### rich mode
-We usually need to specify [gas params](https://evmdocs.acala.network/network/gas-parameters) for some transactions, this is sometimes time-consuming for contract testing, especially with `hardhat` where we can't override gas params in config. 
-
-In rich mode, default gas params are much bigger than normal, so we don't need to worry about overriding gas params when running tests. As a result, all truffle/hardhat tests can be run **unchanged**. 
-
-{% hint style="danger" %}
-Rich mode is convenient for contract testing, but we still recommend reading through the [gas params](https://evmdocs.acala.network/network/gas-parameters) and understand how gas works in EVM+, since in prod we might still need to override gas params.
-{% endhint %}

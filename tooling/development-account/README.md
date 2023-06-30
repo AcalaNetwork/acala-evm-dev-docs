@@ -16,7 +16,7 @@ Smart Contracts can only be deployed by an address with the developer role.  Her
 
 ## Enable Contract Development
 
-1. Go to the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics) then select **Extrinsics**.
+1. Go to the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/extrinsics) then select **Extrinsics**.
 2. Select the target **account** from the top dropdown
 3. Select **evm** from the **extrinsic** dropdown menu
 4. Select **enableContractDevelopment()** from the method/action dropdown
@@ -40,7 +40,7 @@ You can verify your or someone else's developer status by accessing a smart cont
 
 ### Step 1: Get the Genesis hash
 
-1. Select the **Metadata** from the **Settings** Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/settings/metadata)
+1. Select the **Metadata** from the **Settings** Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/settings/metadata)
 2. Copy the **Genesis Hash** hex string
 
 ![Step 1: Getting the Genesis hash](<../../.gitbook/assets/image (5).png>)
@@ -57,7 +57,7 @@ You can verify your or someone else's developer status by accessing a smart cont
 
 ![Step 2: Create the signature of the claim ](<../../.gitbook/assets/image (27).png>)
 
-### Step 4: Claim Account on the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics)
+### Step 4: Claim Account on the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/extrinsics)
 
 The **ethAddress** should be the same as your metamask wallet address that you used above to generate the signature.
 
