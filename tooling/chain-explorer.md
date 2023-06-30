@@ -18,8 +18,8 @@ Alternatively you can go to [https://polkadot.js.org/apps/#/explorer](https://po
 
 Blockscout is our first official EVM chain block explorer.
 
-- [Mandala](https://https://blockscout.mandala.aca-staging.network/)
-- [Karura Testnet](https://blockscout.karura-dev.aca-dev.network/)
+- [Mandala](https://blockscout.mandala.aca-staging.network/)
+- [Karura Testnet](https://blockscout.karura-testnet.aca-staging.network/)
 - [Acala Testnet](https://blockscout.acala-dev.aca-dev.network/)
 - [Karura](https://blockscout.karura.network)
 - [Acala](https://blockscout.acala.network)
