@@ -158,7 +158,7 @@ We can start populating the `App` function's states by defining the extensions, 
   const [echoInput, setEchoInput] = useState<string>('calling an EVM+ contract with polkadot wallet!');
   const [echoMsg, setEchoMsg] = useState<string>('');
   const [newEchoMsg, setNewEchoMsg] = useState<string>('');
-  const [url, setUrl] = useState<string>('wss://mandala-rpc.aca-staging.network/ws');
+  const [url, setUrl] = useState<string>('wss://mandala-tc9-rpc.aca-staging.network');
   // const [url, setUrl] = useState<string>('ws://localhost:9944');
 ```
 
@@ -541,7 +541,7 @@ function App() {
     const [echoInput, setEchoInput] = useState<string>('calling an EVM+ contract with polkadot wallet!');
     const [echoMsg, setEchoMsg] = useState<string>('');
     const [newEchoMsg, setNewEchoMsg] = useState<string>('');
-    const [url, setUrl] = useState<string>('wss://mandala-rpc.aca-staging.network/ws');
+    const [url, setUrl] = useState<string>('wss://mandala-tc9-rpc.aca-staging.network');
     // const [url, setUrl] = useState<string>('ws://localhost:9944');
 
     /* ------------ Step 1: connect to chain node with a provider ------------ */

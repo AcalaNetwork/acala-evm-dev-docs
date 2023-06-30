@@ -1,245 +1,107 @@
-# Gas parameters
+# Gas Parameters
 
-The main difference between Acala EVM+ and legacy EVM is that we need to use pre-computed `gasPrice` and `gasLimit` (we will refer them as "gas parameters"). Manually inputting random gas parameters is discouraged.
-
-<details>
-
-<summary>If you just need a quick help with the gas parameters and are not interested in the explanation, you can expand this section.</summary>
-
-Most of the gas parameter issues that you might encounter, can be solved in two steps:
-
-1. Get valid gas parameters:
-
-```shell
-curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "eth_getEthGas",
-    "params": [],
-    "id": 1
-}'
-```
-
-2\. Override your transaction parameters with the ones returned as a result of this call.
-
-</details>
+The primary distinction between Acala EVM+ and the legacy EVM lies in the usage of encoded `gasPrice` and `gasLimit`, together referred to as "gas parameters".
 
 ## Context
 
-As Acala EVM+ is running on a substrate chain, gas parameters need to encode three substrate parameters: `gasLimit`, `storageLimit`, and `validUntil`. We need to provide a delicate ratio of `gasPrice` to `gasLimit`, so that they can be decoded correctly into the substrate parameters. Randomly changing just one of the gas parameters likely to results in a bad parameter decoding.
+Acala EVM+ operates on a substrate chain. Consequently, the gas parameters must encode four substrate parameters: `gasLimit`, `storageLimit`, `validUntil`, and `tip`. It's crucial to supply precise `gasPrice` to `gasLimit` values to ensure accurate decoding into substrate parameters. Arbitrary changes to these parameters could lead to incorrect decoding.
 
-For example, when user sends token with MetaMask, they will get the gas parameter values of  `201.996894218 gwei` for `gasPrice`, and a `gasLimit` of `342312`. After the user sends this transaction, these gas parameters will be decoded to `validUntil` value of `914096`, `gasLimit` value of `21000` and `storageLimit` value of `641`.
-
-Although this part is incompatible with the legacy EVM, it is actually an advantage of the Acala EVM+, which is able to utilise some features that cannot be found in the legacy EVM. By using `validUntil` parameter we can avoid transaction being stuck in the transaction pool indefinitely, and by using `storageLimit` we are able to encourage the developers to remove the data they don't need from the chain, in order to reduce the chain bloat.
-
-## Getting the Gas parameters
-
-### For users
-
-Users don't have to compute gas parameters by themselves:
-
-* When sending tokens, MetaMask will call the RPC endpoint to get the correct gas parameters for them automatically.
-* When signing a transaction, dApps should compute the correct gas parameters and pass these values to the MetaMask, so users just sign a valid transaction.
-
-The only thing that need to pay attention to, is to not modify the transaction parameters within MetaMask, otherwise the transaction will fail due to bad decoding. We thus encourage you to add the warning against such actions within the user interface of your dApps.
-
-### For developers
-
-**Developers need to compute correct gas parameters when deploying contracts**.
-
-This is because the default gas parameters computed by the tools (MetaMask, Truffle, Hardhat, etc..) have a `storageLimit` of `641`, which is not a limit big enough to store a contract.
-
-On the other hand, smart contract calls won't need this step in most cases, since the default parameters are sufficient for most of the smart contract calls. In some cases if a smart contract call uses an amount of storage that is greater than the default `storageLimit`, valid gas parameters have to be computed.
-
-There are three ways to get valid gas parameters for a transaction:
-
-* Using an RPC call
-* Using hardcoded values
-* Using an SDK helper
-
-[which one should I use?](../miscellaneous/FAQs.md#how-to-fetch-valid-gas-params-in-different-senarios)
-
-#### **Using an RPC call**
-
-Getting valid gas parameters is as easy as initiating the following call:
-
-```shell
-curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "eth_getEthGas",
-    "params": [],
-    "id": 1
-}'
+For instance, when a user sends a transaction with the following gas parameters:
 ```
-
-The following call will return the same result as using default substrate parameters:
-
-```shell
-curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "eth_getEthGas",
-    "params": [
-      {
-        "gasLimit": 21000000,
-        "storageLimit": 64100,
-        "validUntil": current block + 100
-      }
-    ],
-    "id": 1
-}'
-```
-
-Custom substrate parameters can be passed as well. For example if we want to get the gas parameters for a transaction that should be valid until block `10000000`:
-
-```shell
-curl --location --request GET 'https://eth-rpc-mandala.aca-staging.network' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "eth_getEthGas",
-    "params": [
-        {
-            "gasLimit": 21000000,
-            "storageLimit": 64100,
-            "validUntil": 10000000
-        }
-    ],
-    "id": 1
-}'
-```
-
-This is the result, with is the valid `gasPrice` and `gasLimit` for transactions to use:
-
-```json5
 {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "result":{
-    "gasPrice": "0x33a70303ea",
-    "gasLimit": "0x329b140"
-  }
+  gasPrice: 100.004623375 gwei,
+  gasLimit: 100106,
 }
 ```
 
-#### **Using hardcoded values**
-
-Let's use the successfully computed a gas parameters from the previous example:
-
-```json5
-"result":{
-  "gasPrice": "0x33a70303ea",
-  "gasLimit": "0x329b140"
-}
+These parameters are decoded into substrate parameters as follows:
 ```
-
-these parameters are valid until block number `10000000` and can be reused until this block number is reached.
-
-#### **Using an SDK helper**
-
-A thorough explanation about this method can be found in the [tutorials](broken-reference). This is the snippet of how the sample code that returns the transaction parameters looks like:
-
-```typescript
-import { calcEthereumTransactionParams } from '@acala-network/eth-providers';
-
-const txFeePerGas = '199999946752';
-const storageByteDeposit = '100000000000000';      // for Mandala/Karura
-// const storageByteDeposit = '300000000000000';   // for Acala
-
-const ethParams = calcEthereumTransactionParams({
-  gasLimit: 21000000,
-  validUntil: curblockNumber + 100,                // or hardcode a very big number
-  storageLimit: 64001,
-  txFeePerGas,
-  storageByteDeposit
-});
-
-console.log({
-  txGasPrice: txGasPrice.toNumber(),
-  txGasLimit: txGasLimit.toNumber(),
-});
-```
-
-## Overriding transaction Gas parameters
-
-After getting the valid gas parameters, we can override the smart contract deployment transaction gas parameters so that the smart contract gets successfully deployed.
-
-### Hardhat
-
-Transaction parameters need to be overriden for each transaction:
-
-```typescript
-- const instance = await HelloWorld.deploy(callParams)
-+ const instance = await HelloWorld.deploy(callParams, gasOverrides)
-```
-
-### Truffle
-
-Gas overrides can be specified globally in `truffle-config.js`
-
-```javascript
 {
-  ...
-  gasPrice: xxx,
-  gas: yyy,
+  validUntil: 4623375,
+  gasLimit: 30000,
+  storageLimit: 64,
+  tip: 0,
 }
 ```
 
-### MetaMask
+Despite being inconsistent with the legacy EVM, this aspect is advantageous for Acala EVM+. It utilizes features unavailable in the legacy EVM. For example, the `validUntil` parameter prevents transactions from indefinitely lingering in the transaction pool. Additionally, the `storageLimit` encourages developers to remove redundant data from the chain, thereby reducing chain bloat.
 
-The details on how to use the modified gas parameters can be found [here](../tooling/metamask/).
+## Retrieving Gas Parameters
+### for users
 
-### Remix IDE
+Users are not required to calculate gas parameters:
 
-The details on how to use the modified gas parameters can be found [here](../tooling/remix-ide/).
+- When sending tokens, MetaMask automatically retrieves the correct gas parameters by calling ETH RPC endpoints.
+- During transaction signing, dApps provide the correct gas parameters to MetaMask, enabling users to sign a valid transaction.
 
-## Limitations and Further Improvements
+However, users should avoid arbitrary modification of transaction parameters within MetaMask, as it could lead to transaction failure due to incorrect decoding. We recommend highlighting this warning within your dApp's user interface.
 
-Since users are unable to change the gas parameters, we currently don't support speeding up the transactions. In the future we might be able to use EIP-1559 or a new algorithm to support the Substrate `tip`.
+### for developers
 
-## Gas price calculation
+Most tools and libraries (like `ethers`, `hardhat`, `truffle`) automatically calculate the correct gas parameters when sending a transaction. Developers typically do not need to intervene.
 
-If you are interested exactly how the gas price is calculated, you are welcome to expand the following section:
+If gas parameters are not auto-computed, developers can calculate them as follows:
 
-<details>
+```ts
+const gasPrice = await provider.getGasPrice();
+const gasLimit = await contractInstance.estimateGas.functionName(...args);
+```
 
-<summary>Gas parameters calculation equation</summary>
+## Gas Decoding Details
+### without tip (default case)
+Assume the Ethereum gasLimit is encoded as `aaaabbbcc` and gasPrice is encoded as `100yyyyyyyyy`. They can be decoded into substrate gas parameters as follows:
+- `validUntil = yyyyyyyyy`
+- `gasLimit = 30000 * bbb`
+- `storageLimit = 2^min(21, cc)`
 
-* User Inputs
-  * `gas_limit`
-  * `storage_byte_limit`
-  * `valid_until`
-    * Block number
+for example:
+```
+{
+  gasPrice: 100004623375,   // 100yyyyyyyyy, where yyyyyyyyy = 004623375
+  gasLimit: 100106,         // aaaabbbcc, where bbb = 001 and cc = 06
+}
+```
+will be decoded as 
+```
+{
+  validUntil: 4623375,  // yyyyyyyyy
+  gasLimit: 30000,      // 30000 * bbb = 30000 * 1 = 30000
+  storageLimit: 64,     // 2 ^ min(21, cc) = 2 ^ 6 = 64
+  tip: 0,
+}
+```
 
-<!---->
+### with tip
+The `gasLimit` remains unaffected by the tip, as the tip is encoded into `gasPrice` as `ab0yyyyyyyyy`.
+- `tip = (ab0 / 100 - 1)% of the original cost`
 
-* Tx data
-  * `tx_gas_price`
-  * `tx_gas_limit`
+for example:
+```
+{
+  gasPrice: 120004623375,   // ab0yyyyyyyyy, where ab0 = 120
+  gasLimit: 100106,         // same as above
+}
+```
+will be decoded as 
+```
+{
+  validUntil: 4623375,  // same as above
+  gasLimit: 30000,      // same as above
+  storageLimit: 64,     // same as above
+  tip: 20%,             // ab0 / 100 - 1 = 120 / 100 - 1 = 20%
+}
+```
 
-<!---->
+## Modifying Gas Parameters
+### for users
+Users generally should avoid manually modifying gas parameters to prevent incorrect decoding. dApps should initiate signature requests with valid gas parameters, relieving users of any concern about gas calculation. Nonetheless, knowledgeable users can manually modify the `ab0` part of the gasPrice to increase the tip, which can expedite the transaction when the network is busy.
 
-* User input to tx data
-  * `block_period = valid_until / 30`
-    * `storage_entry_limit = storage_byte_limit / 64`
-      * storage\_count\_limit is u16
-      * max value 0xffff = 4194240 bytes = 4MB
-  * `storage_byte_deposit = 100000000000000`
-  * `storage_entry_deposit = storage_byte_deposit * 64`
-  * `tx_fee_per_gas = 200000000000`
-  * `tx_gas_price = tx_fee_per_gas + block_period << 16 + storage_entry_limit`
-  * `tx_gas_limit = gas_limit + storage_entry_limit * storage_entry_deposit / tx_fee_per_gas`
+### for developers
+Developers can offer different priority options to users and compute the corresponding `gasPrice`, eliminating the need for users to manually modify gas parameters. For instance:
+- default priority: `ab0 = 100`, in which case gasPrice is calculated automatically by the toolings
+- high priority: `ab0 = 120`, in which case tip = 20% of the original cost
+- super high priority: `ab0 = 200`, in which case tip = 100% of the original cost
 
-<!---->
+If developers choose not to offer such options, they can use the default gasPrice directly.
 
-* Tx data to user input
-  * `storage_entry_limit = tx_gas_price | 0xffff`
-  * `block_period = (tx_gas_price - stroage_entry_limit - tx_fee_per_gas) >> 16`
-  * `valid_until = block_period * 30`
-  * `gas_limit = tx_gas_limit - storage_entry_limit * storage_entry_deposit / tx_fee_per_gas`
-
-</details>
+When prompting user signatures, developers should also calculate a valid gasLimit. Most often, the tools should auto-calculate the gasLimit. If not, developers can hardcode a valid gasLimit (a rare occurrence, but if it happens, please report to the Acala team). For example, if an auto-calculated `gasLimit = 100106` fails the transaction with an error like `storage limit not enough`, it implies the transaction requires more storage than the auto-computed storageLimit = `2 ^ 6 = 64`. If the actual storage cost is `100`, developers can use `cc = 7`, making `gasLimit = 100107`.
