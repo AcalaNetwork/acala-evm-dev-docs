@@ -10,7 +10,7 @@ Now that Remix IDE is connected to the Mandala test network, we can interact wit
 File explorers section is represented by the <img src="../../.gitbook/assets/Screenshot from 2022-01-29 00-08-33.png" alt="" data-size="line"> icon.
 {% endhint %}
 
-We can use a very simple smart contract that is further explained in the tutorials section and is already deployed on the Mandala TC8 network. The smart contract is called Echo and it has one function that stores a value passed to it in a public variable, which we are able to get using it's getter function. In order to use Remix IDE to interact with it, we need to add it into the `contracts` folder. We do this by option-clicking onto the folder and selecting `New file` option. the file should be named `Echo.sol`. You can now copy-paste the following code into the file:
+We can use a very simple smart contract that is further explained in the tutorials section and is already deployed on the Mandala TC9 network. The smart contract is called Echo and it has one function that stores a value passed to it in a public variable, which we are able to get using it's getter function. In order to use Remix IDE to interact with it, we need to add it into the `contracts` folder. We do this by option-clicking onto the folder and selecting `New file` option. the file should be named `Echo.sol`. You can now copy-paste the following code into the file:
 
 {% code title="Echo.sol" %}
 ```solidity
