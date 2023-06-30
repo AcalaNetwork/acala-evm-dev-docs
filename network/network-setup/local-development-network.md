@@ -82,4 +82,4 @@ Once the local development network is up and running, the following services are
 
 You can now setup [Metamask on localhost](../../tooling/metamask/#localhost) and interact with your local setup.
 
-Try a few of the [EVM tutorials](../../tutorials/tutorials.md) to get familiar with the responses each terminal window provides as feedback.
+Try a few of the [EVM tutorials](../../examples/examples.md) to get familiar with the responses each terminal window provides as feedback.
