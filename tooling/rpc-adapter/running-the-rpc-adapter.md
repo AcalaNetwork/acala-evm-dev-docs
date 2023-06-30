@@ -6,17 +6,11 @@ description: Instructions on how to locally run the RPC adapter
 
 Running the RPC adapter allows for interaction with the Acala EVM+, be it with the local development network, public test network or either of the main networks.
 
-There are three ways of running the RPC node in a local environment:
-
-1. [Using npm to run the RPC adapter as a package](running-the-rpc-adapter.md#running-the-rpc-adapter-as-a-package)
-2. [Building the RPC adapter from source](running-the-rpc-adapter.md#building-the-rpc-adapter-from-source)
-3. [Running the RPC adapter as a Docker container](running-the-rpc-adapter.md#running-the-rpc-adapter-in-docker)
-
 {% hint style="warning" %}
 In previous [local development setup](../../network/network-setup/local-development-network.md) section, we run the whole stack (node + subquery + rpc adapter) with docker compose, which already includes the RPC adapter. This sections is for those who want to run the RPC adapter separately, or learn more about the RPC adapter.
 {% endhint %}
 
-## local mandala node
+## Running a local mandala node
 RPC adapter needs to connect to a node, so we first run a local mandala node at port `9944`
 ```
 docker run -it --rm -p 9944:9944 -p 9933:9933 ghcr.io/acalanetwork/mandala-node:sha-a32c40b --dev --ws-external --rpc-port=9933 --rpc-external --rpc-cors=all --rpc-methods=unsafe -levm=debug --pruning=archive --instant-sealing
@@ -28,7 +22,7 @@ docker run -it --rm -p 9944:9944 -p 9933:9933 ghcr.io/acalanetwork/mandala-node:
 docker run -it --rm -e LOCAL_MODE=1 -p 8545:8545 acala/eth-rpc-adapter:v2.7.4 yarn start
 ```
 
-### or as an npm package
+### or via npm
 ```shell
 npx @acala-network/eth-rpc-adapter \
   --endpoint ws://localhost:9944 \
@@ -70,17 +64,16 @@ Please don't mix using ENVs and CLI options. **CLI options are preferred**, and 
 
 More details can also be found by `yarn start --help` or `npx @acala-network/eth-rpc-adapter --help`.
 
-| ENV                | CLI options equivalent | default             | explanation                                                                                             |
+| ENV                | cli options equivalent | default             | explanation                                                                                             |
 |--------------------|------------------------|---------------------|---------------------------------------------------------------------------------------------------------|
 | ENDPOINT_URL       | -e, --endpoint         | ws://localhost:9944 | Node websocket endpoint(s): can provide one or more endpoints, seperated by comma url        |
-| SUBQL_URL          | --subql                | undefined           | Subquery url: *optional* if testing contracts locally that doesn\'t query logs or historical Tx, otherwise *required*. [more info](../../miscellaneous/FAQs.md#when-do-i-need-to-provide-subquery-url-for-eth-rpc-adpater-or-evmrpcprovider) |
+| SUBQL_URL          | --subql                | undefined           | Subquery url: *optional* if testing contracts locally that doesn\'t query logs or historical Tx, otherwise *required* |
 | PORT               | -p, --port             | 8545                | port to listen for http and ws requests                                    |
 | MAX_CACHE_SIZE     | --max-cache-size       | 200                 | max number of blocks that lives in the cache [more info](https://evmdocs.acala.network/network/network) |
 | MAX_BATCH_SIZE     | --max-batch-size       | 50                  | max batch size for RPC request                                                                          |
 | STORAGE_CACHE_SIZE | --max-storage-size     | 5000                | max storage cache size                                                                                  |
 | SAFE_MODE          | -s, --safe-mode        | 0                   | if enabled, TX and logs can only be found after they are finalized                                      |
 | LOCAL_MODE         | -l, --local-mode       | 0                   | enable this mode when testing with locally running instant-sealing mandala                              |
-| RICH_MODE          | -r, --rich-mode        | 0                   | if enabled, default gas params is big enough for most contract deployment and calls, so contract tests from traditional evm world can run unchanged. Note this mode is helpful for testing contracts, but is different than production envionment. [more info](https://evmdocs.acala.network/network/gas-parameters) |
 | HTTP_ONLY          | --http-only            | 0                   | only allow http requests, disable ws connections                  |
 | VERBOSE            | -v, --verbose          | 1                   | print some extra info                                                                                   |
 
