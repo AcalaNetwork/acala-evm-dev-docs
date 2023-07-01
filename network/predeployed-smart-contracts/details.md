@@ -84,7 +84,7 @@ The most up to date list of ERC20 addresses can be found in the [predeploy-contr
 
 ## DEX
 
-The DEX smart contract allows you to interact with the built in DEX of the Acala EVM+. You can take a look at [DEX tutorial](../../tutorials/truffle-tutorials/dex-tutorial.md) in order to see it in action.
+The DEX smart contract allows you to interact with the built in DEX of the Acala EVM+. You can take a look at [DEX tutorial](../../examples/truffle-tutorials/dex-tutorial.md) in order to see it in action.
 
 |                                       Acala                                      |                                      Karura                                      |                                      Mandala                                     |
 | :------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
@@ -96,7 +96,7 @@ The DEX smart contract allows you to interact with the built in DEX of the Acala
 
 ## EVM
 
-The EVM smart contract allows you to manage the development aspect of you account and the smart contracts that you deployed or are in control of. If you wish to see more about how the EVM predeployed smart contract works, you can take a look at the [EVM tutorial](../../tutorials/hardhat-tutorials/evm-tutorial.md).
+The EVM smart contract allows you to manage the development aspect of you account and the smart contracts that you deployed or are in control of. If you wish to see more about how the EVM predeployed smart contract works, you can take a look at the [EVM tutorial](../../examples/hardhat-tutorials/evm-tutorial.md).
 
 |                                       Acala                                      |                                    Karura                                    |                                      Mandala                                     |
 | :------------------------------------------------------------------------------: | :--------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
@@ -120,7 +120,7 @@ The Oracle predeployed smart contract allows you to get the prices of the suppor
 
 ## Schedule
 
-The Schedule smart contract allows you to schedule the on-chain calls without the need for the off-chain interaction. To see the Schedule in action, you can take a look at the [Advanced escrow](../../tutorials/hardhat-tutorials/advancedescrow-tutorial.md) tutorial.
+The Schedule smart contract allows you to schedule the on-chain calls without the need for the off-chain interaction. To see the Schedule in action, you can take a look at the [Advanced escrow](../../examples/hardhat-tutorials/advancedescrow-tutorial.md) tutorial.
 
 |                                   Acala                                  |                                  Karura                                  |                                      Mandala                                     |
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
@@ -189,3 +189,15 @@ The Incentives smart contract can be reached at the address above and its source
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
 | INCENTIVES     | 0x0000000000000000000000000000000000000808 |
+
+## XTokens
+
+The XTokens smart contract allows you to use XCM to transfer tokens between parachains.
+
+|                                       Acala                                      |                                      Karura                                      |                                      Mandala                                     |
+| :------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
+| <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11) (2) (2).png" alt="" data-size="line"> |
+
+| Smart contract | Address                                    |
+| -------------- | ------------------------------------------ |
+| XTokens            | 0x0000000000000000000000000000000000000809 |

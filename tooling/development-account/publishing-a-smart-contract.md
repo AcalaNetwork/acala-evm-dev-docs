@@ -18,7 +18,7 @@ Only the contract's maintainer can publish it, no one else.
 The example below uses Mandala as example. For other networks, you will need to switch to different [Polkadot App](../chain-explorer.md#polkadotjs-app).
 {% endhint %}
 
-1. Under the **Submission** tab of [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics), select **evm** from the **extrinsic** dropdown menu
+1. Under the **Submission** tab of [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/extrinsics), select **evm** from the **extrinsic** dropdown menu
 2. Select **publishContract(contract)** from the method/action dropdown
 3. Fill in the **contract** address
 4. Click **Submit Transaction**
@@ -29,7 +29,7 @@ Trying to interact with an unpublished contract with an account that does not ha
 
 ## Verify that the smart contract has been published successfully
 
-Polkadot App can be used to verify whether or not the smart contract is published. This can be done using the [Chain state](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/chainstate) viewer:
+Polkadot App can be used to verify whether or not the smart contract is published. This can be done using the [Chain state](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/chainstate) viewer:
 
 1. Using the **Storage** tab, select the **evm** from the **select state query** dropdown
 2. Select **accounts(H160)** from the method/action dropdown
@@ -46,4 +46,4 @@ In case your smart contract has a contract factory function, the child smart con
 
 This means that the child smart contracts created using a published smart contract's contract factory are already published and don't need to be published manually.
 
-Keep in mind that the maintainer of a child smart contract is the parent smart contract and not the caller of the transaction that triggered its creation. In case the maintainer role of the smart contract needs to be transferred from the parent smart contract to the caller, the transfer should be implemented in the same call as the creation of the child smart contract. You can do so using the [EVM predeployed smart contract](../../tutorials/hardhat-tutorials/evm-tutorial.md).
+Keep in mind that the maintainer of a child smart contract is the parent smart contract and not the caller of the transaction that triggered its creation. In case the maintainer role of the smart contract needs to be transferred from the parent smart contract to the caller, the transfer should be implemented in the same call as the creation of the child smart contract. You can do so using the [EVM predeployed smart contract](../../examples/hardhat-tutorials/evm-tutorial.md).

@@ -60,7 +60,7 @@ contract Echo{
 }
 ```
 
-The code can be updated using extrinsics in the [Polkadot.js application](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-rpc.aca-staging.network%2Fws#/extrinsics). The call can be found under `Developer menu` in `Extrinsics`. Then select `evm` in the extrinsics selection dropdown and `setCode` call. The arguments passed to it is the address of the unpublished smart contract we are updating and the new bytecode.
+The code can be updated using extrinsics in the [Polkadot.js application](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/extrinsics). The call can be found under `Developer menu` in `Extrinsics`. Then select `evm` in the extrinsics selection dropdown and `setCode` call. The arguments passed to it is the address of the unpublished smart contract we are updating and the new bytecode.
 
 ![Developer > Extrinsics > evm > setCode](<../.gitbook/assets/image (9).png>)
 

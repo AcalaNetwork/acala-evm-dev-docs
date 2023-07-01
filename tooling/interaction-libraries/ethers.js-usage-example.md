@@ -1,6 +1,6 @@
 # Ethers.js usage example
 
-The ethers.js library can be used to interact with the EVM+. In this example, we are retrieving the `developerStatus` of the [`EVM`](../../tutorials/hardhat-tutorials/evm-tutorial.md) contract.
+The ethers.js library can be used to interact with the EVM+. In this example, we are retrieving the `developerStatus` of the [`EVM`](../../examples/hardhat-tutorials/evm-tutorial.md) contract.
 
 This will validate wether the provided address has the developer status enabled or not. If you wish to learn more about the [development accounts](../development-account/), you can read up about them.
 
