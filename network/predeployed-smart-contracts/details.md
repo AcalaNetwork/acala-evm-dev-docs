@@ -196,7 +196,7 @@ The XTokens smart contract allows you to use XCM to transfer tokens between para
 
 |                                       Acala                                      |                                      Karura                                      |                                      Mandala                                     |
 | :------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11) (2) (2).png" alt="" data-size="line"> |
+| <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line">|
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |

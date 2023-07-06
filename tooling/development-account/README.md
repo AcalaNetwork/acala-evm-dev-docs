@@ -37,27 +37,26 @@ You can verify your or someone else's developer status by accessing a smart cont
 {% endcontent-ref %}
 
 ## Bind Accounts
+### On Karura/Acala
+binding evm and substrate accounts can be done easily on our Dapp UI:
+- [karura](https://apps.karura.network/bridge/bind-address)
+- [acala](https://apps.acala.network/bridge/bind-address)
 
-### Step 1: Get the Genesis hash
+for more details, checkout [address binding](https://guide.acalaapps.wiki/general/address-binding) on acala wiki.
 
-1. Select the **Metadata** from the **Settings** Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/settings/metadata)
-2. Copy the **Genesis Hash** hex string
+### On Mandala
+There is no UI available for Mandala address binding, so we will need to do this manually
 
-![Step 1: Getting the Genesis hash](<../../.gitbook/assets/image (5).png>)
-
-### Step 2: Get the Chain id for your target chain
-
-`chainId` can be found in [network configuration](../../network/network-configuration.md)
-
-### Step 3: Create the signature of the claim on the [EVM+ Playground](https://evm.acala.network/#/Bind%20Account)
+#### 1) Create the signature of the claim on the [EVM+ Playground](https://evm.acala.network/#/Bind%20Account)
 
 1. Select the right account in Metamask
-2. Fill in the **Substrate address**, **Chain id** & **Genesis hash**
+2. Fill in: 
+   - **Substrate address**: you substrate address
+   -  **Chain id**: 595
+   -  **Genesis hash**: `0x3035b88c212be330a1a724c675d56d53a5016ec32af1790738832db0227ac54c`
 3. Click **Sign** & copy the **signature** to the next step
 
-![Step 2: Create the signature of the claim ](<../../.gitbook/assets/image (27).png>)
-
-### Step 4: Claim Account on the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/extrinsics)
+#### 2) Claim Account on the Developer Section of the [Polkadot App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/extrinsics)
 
 The **ethAddress** should be the same as your metamask wallet address that you used above to generate the signature.
 
@@ -68,7 +67,7 @@ The **ethAddress** should be the same as your metamask wallet address that you u
 
 ![Step 3: Fill in eth Address and eth Signature](<../../.gitbook/assets/image (52).png>)
 
-### Step 5: Confirm the bindings
+#### 5) Confirm the bindings
 
 1. Select the **Developer** tab, then **Chain state** from the dropdown
 2. Select **Storage** and then **evmAccounts** from the **state query** dropdown
