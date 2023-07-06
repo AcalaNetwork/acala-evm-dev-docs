@@ -8,9 +8,4 @@ This example will show how to batch transactions with polkadot wallet and [bodhi
 Before diving into this advanced example, we suggest going over the [basic example](./using-bodhi.js-to-deploy-smart-contract-and-interact-with-it.md) first
 {% endhint %}
 
-{% hint style="info" %}
-You can find a hosted version of this example [here](https://bodhi-examples-batch-transactions.vercel.app/)
-{% endhint %}
-
-## Getting Started
-The example is [here](https://github.com/AcalaNetwork/bodhi-examples/tree/master/batch-transactions#bodhijs-example---batch-transactions).
+The example is [here](https://github.com/AcalaNetwork/bodhi-examples/tree/master/batch-transactions).
