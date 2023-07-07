@@ -7,7 +7,7 @@ description: Instructions on how to use the chain explorers of Acala EVM+
 
 - [Local](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/explorer)
 - [Mandala](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fmandala-tc9-rpc.aca-staging.network%2Fws#/explorer)
-- [Karura Testnet](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkarura-dev.aca-dev.network%2Frpc%2Fws#/explorer)
+- [Karura Testnet](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkarura-testnet.aca-staging.network%2Frpc%2Fkarura%2Fws#/explorer)
 - [Acala Testnet](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Facala-dev.aca-dev.network%2Frpc%2Fws#/explorer)
 - [Karura](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkarura-rpc-0.aca-api.network#/explorer)
 - [Acala](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Facala-rpc-0.aca-api.network#/explorer)

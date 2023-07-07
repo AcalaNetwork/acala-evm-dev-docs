@@ -17,7 +17,7 @@ The local development network consists of following services:
 ### start the whole stack together
 You can download or copy + paste this [docker compose file](https://github.com/AcalaNetwork/bodhi.js/blob/master/examples/docker-compose-bodhi-stack.yml), and then
 
-```shell
+```
 docker compose -f docker-compose-bodhi-stack.yml up
 ```
 

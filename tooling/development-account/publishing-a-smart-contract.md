@@ -15,6 +15,7 @@ Only the contract's maintainer can publish it, no one else.
 {% endhint %}
 
 ## Publish a contract
+We can publish a contract either with [substrate account](#with-substrate-account) or [evm account](#with-evm-account).
 ### with substrate account
 {% hint style="info" %}
 The example below uses Mandala as example. For other networks, you will need to switch to different [Polkadot App](../chain-explorer.md#polkadotjs-app).
@@ -51,4 +52,4 @@ In case your smart contract has a contract factory function, the child smart con
 
 This means that the child smart contracts created using a published smart contract's contract factory are already published and don't need to be published manually.
 
-Keep in mind that the maintainer of a child smart contract is the parent smart contract and not the caller of the transaction that triggered its creation. In case the maintainer role of the smart contract needs to be transferred from the parent smart contract to the caller, the transfer should be implemented in the same call as the creation of the child smart contract. You can do so using the [EVM predeployed smart contract](../../examples/hardhat-tutorials/evm-tutorial.md).
+Keep in mind that the maintainer of a child smart contract is the parent smart contract and not the caller of the transaction that triggered its creation. In case the maintainer role of the smart contract needs to be transferred from the parent smart contract to the caller, the transfer should be implemented in the same call as the creation of the child smart contract. You can do so using the [EVM predeployed smart contract](https://github.com/AcalaNetwork/hardhat-tutorials/tree/master/EVM).
