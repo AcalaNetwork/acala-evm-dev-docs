@@ -18,12 +18,12 @@ docker run -it --rm -p 9944:9944 -p 9933:9933 ghcr.io/acalanetwork/mandala-node:
 
 ## Running the RPC adapter
 ### with docker
-```shell
-docker run -it --rm -e LOCAL_MODE=1 -p 8545:8545 acala/eth-rpc-adapter:v2.7.4 yarn start
+```
+docker run -it --rm -p 8545:8545 acala/eth-rpc-adapter:2.6.8 --endpoint ws://host.docker.internal:9944 --local-mode
 ```
 
 ### or via npm
-```shell
+```
 npx @acala-network/eth-rpc-adapter \
   --endpoint ws://localhost:9944 \
   --local-mode
@@ -41,7 +41,7 @@ Options can be passed to the RPC adapter in three ways:
 
 Passing the options as CLI options is done by appending the values to the command when running the RPC adapter:
 
-```shell
+```
 npx @acala-network/eth-rpc-adapter -l -e ws://localhost:9944
 ```
 
@@ -49,7 +49,7 @@ npx @acala-network/eth-rpc-adapter -l -e ws://localhost:9944
 
 If you wish to pass the options as environment variables in the terminal, you can add them with the `export` statements, or by prepending the command used to spin up RPC adapter:
 
-```shell
+```
 export ENDPOINT_URL=ws://localhost:9944
 LOCAL_MODE=1 npx @acala-network/eth-rpc-adapter
 ```
@@ -62,7 +62,7 @@ Both the environment variable that is defined by itself as well as the one defin
 Please don't mix using ENVs and CLI options. **CLI options are preferred**, and will overwrite ENVs.
 {% endhint %}
 
-More details can also be found by `yarn start --help` or `npx @acala-network/eth-rpc-adapter --help`.
+More details can also be found by `npx @acala-network/eth-rpc-adapter --help`.
 
 | ENV                | cli options equivalent | default             | explanation                                                                                             |
 |--------------------|------------------------|---------------------|---------------------------------------------------------------------------------------------------------|
@@ -80,8 +80,8 @@ More details can also be found by `yarn start --help` or `npx @acala-network/eth
 Using the `-e` flag and passing the URL of a Mandala, Acala and Karura node allows for running the local RPC adapter while communicating with a public network.
 
 ### Modes
-#### safe mode (deprecated)
-In this mode, Txs and logs can only be found after they are finalized. Now deprecated in favor for the `finalized` and `safe` block tags.
-
 #### local mode
 For local testing, we usually turn this mode on, together with a local `--instant-sealing` mandala node. It has some optimization to run faster with local node, and some minor bug prevention.
+
+#### safe mode (deprecated)
+In this mode, Txs and logs can only be found after they are finalized. Now deprecated in favor for the `finalized` and `safe` block tags.

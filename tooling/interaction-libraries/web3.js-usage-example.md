@@ -6,7 +6,7 @@ This will validate wether the provided address has the developer status enabled 
 
 In order to be able to use the web3.js library to interact with the [predeployed smart contract](broken-reference), we need to add it as well as the precompiled smart contracts to the projects:
 
-```shell
+```
 yarn --dev web3 @acala-network/contracts
 ```
 

@@ -40,7 +40,6 @@ There are two types of RPCs available:
 - `eth_uninstallFilter`
 
 ### Custom RPCs
-- `eth_getEthGas`: calculate eth transaction gas params from substrate gas params. More details please refer [here](https://evmdocs.acala.network/network/gas-parameters)
 - `eth_getEthResources`: calculate eth transaction gas params from transaction details, params: [TransactionRequest](https://docs.ethers.io/v5/api/providers/types/#providers-TransactionRequest)
 - `net_indexer`: get subql indexer metadata
 - `net_cacheInfo`: get the cache info

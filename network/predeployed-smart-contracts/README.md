@@ -14,7 +14,7 @@ The precompiled smart contracts allow for the use of the predeployed smart contr
 
 To add them to your project simply use:
 
-```shell
+```
 yarn add --dev @acala-network/contracts
 ```
 

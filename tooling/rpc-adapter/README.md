@@ -8,4 +8,4 @@ Many of the EVM tools rely on [JSON-RPC](https://eth.wiki/json-rpc/API) to commu
 
 For more information, checkout:
 - [running the rpc adapter](./running-the-rpc-adapter.md)
-- [github document](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-rpc-adapter)
+- [github document](https://github.com/AcalaNetwork/bodhi.js/tree/master/packages/eth-rpc-adapter)
