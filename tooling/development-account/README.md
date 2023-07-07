@@ -45,7 +45,7 @@ binding evm and substrate accounts can be done easily on our Dapp UI:
 for more details, checkout [address binding](https://guide.acalaapps.wiki/general/address-binding) on acala wiki.
 
 ### On Mandala
-There is no UI available for Mandala address binding, so we will need to do this manually
+There is no UI available for Mandala address binding, but we can still do this manually.
 
 #### 1) Create the signature of the claim on the [EVM+ Playground](https://evm.acala.network/#/Bind%20Account)
 
@@ -67,7 +67,7 @@ The **ethAddress** should be the same as your metamask wallet address that you u
 
 ![Step 3: Fill in eth Address and eth Signature](<../../.gitbook/assets/image (52).png>)
 
-#### 5) Confirm the bindings
+#### 3) Confirm the bindings
 
 1. Select the **Developer** tab, then **Chain state** from the dropdown
 2. Select **Storage** and then **evmAccounts** from the **state query** dropdown
