@@ -19,7 +19,7 @@ docker run -it --rm -p 9944:9944 -p 9933:9933 ghcr.io/acalanetwork/mandala-node:
 ## Running the RPC adapter
 ### with docker
 ```
-docker run -it --rm -p 8545:8545 acala/eth-rpc-adapter:2.6.8 --endpoint ws://host.docker.internal:9944 --local-mode
+docker run -it --rm -p 8545:8545 acala/eth-rpc-adapter:2.7.4 --endpoint ws://host.docker.internal:9944 --local-mode
 ```
 
 ### or via npm
