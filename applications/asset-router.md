@@ -24,7 +24,7 @@ The routing process involves several components:
 * **Asset router contracts**:
   * A router address on Acala/Karura, which is computed by the factory contract.
   * A factory contract, which calculates the router address based on the XCM or wormhole instructions. After the asset arrives at the router address, it deploys the router contract to the router address, and calls it to execute the routing.
-* **Xtokens contracts**: A pre-deployed contracts on Acala/Karura empower EVM+ to call XCM that transfers tokens among parachains.
+* **Xtokens contracts**: A pre-deployed contract on Acala/Karura, which empowers EVM+ to call XCM that transfers tokens among parachains.
 
 ### Routing Process
 
@@ -56,4 +56,4 @@ The endpoints mentioned below are all associated with the relayer's endpoints.
 * [wormhole docs](https://docs.wormhole.com/wormhole/)
 * [wormhole development book](https://book.wormhole.com/)
 * [Cross-Consensus Message (XCM)](https://wiki.polkadot.network/docs/learn-xcm)
-* [xtokens pre-deployed contracts (TODO: update doc to include it)](asset-router.md)
+* [xtokens pre-deployed contracts](https://github.com/AcalaNetwork/predeploy-contracts/blob/master/contracts/docs/xtokens/Xtokens.md)
