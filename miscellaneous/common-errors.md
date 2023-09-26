@@ -291,16 +291,23 @@ This is usually cause by using `ethers.JsonRpcProvider` as provider when sending
 
 **Suggested actions:**
 
-Substitute `JsonRpcProvider` by bodhi.js sdk's [evmRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/eth-providers#getting-started). For example:
+Use [AcalaJsonRpcProvider](https://github.com/AcalaNetwork/bodhi.js/tree/master/packages/eth-providers#acala-networketh-providers) as a drop-in replacement.
 
-```javascript
-const provider = new EvmRpcProvider('chain node ws url');
-await provider.isReady();
-const signer = new ethers.Wallet('private key', provider);
-// send some transactions ...
-await provider.disconnect();
+For example:
+
+```ts
+import { AcalaJsonRpcProvider } from "@acala-network/eth-providers";
+
+// https://evmdocs.acala.network/network/network-configuration#karura-mainnet
+const KARURA_ETH_RPC= 'https://eth-rpc-karura.aca-api.network';
+const provider = new AcalaJsonRpcProvider(KARURA_ETH_RPC);
+
+// send transaction
+const wallet = new Wallet(PRIVATE_KEY, provider);
+const contractInstance = new Contract(CONTRACT_ADDR, CONTRACT_ABI, wallet);
+await contractInstance.someMethod();
 ```
 
-Note that `JsonRpcProvider` should still work in most cases, such as getting account balance, etc... The only senario that this error occur is when the operation internally calls `Provider.sendTransaction`.
+Note that `JsonRpcProvider` should still work in most cases, such as getting account balance, etc... The only senario that this error occur is when sending a transaction with `Provider.sendTransaction`.
 
-Also, it only occurs for `ethers.JsonRpcProvider`, and using other providers (such as metamask's provider) should be fine.
+Also, such error only occurs with `ethers.JsonRpcProvider`, and using other providers (such as metamask's provider) should be fine.
