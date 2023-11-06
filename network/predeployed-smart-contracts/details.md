@@ -174,7 +174,7 @@ The Homa smart contract can be found at the address available above and you can 
 
 |                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
+| <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> |<img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
@@ -210,7 +210,7 @@ The Incentives smart contract can be reached at the address above and its source
 
 |                                   Acala                                  |                                  Karura                                  |                                  Mandala                                 |
 | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
-| <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
+| <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (11) (2) (1).png" alt="" data-size="line"> | <img src="../../.gitbook/assets/image (41).png" alt="" data-size="line"> |
 
 | Smart contract | Address                                    |
 | -------------- | ------------------------------------------ |
