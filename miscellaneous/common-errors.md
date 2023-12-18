@@ -315,7 +315,7 @@ Also, such error only occurs with `ethers.JsonRpcProvider`, and using other prov
 ### `Account cannot exist with the funds that would be given`
 **Common causes:**
 
-Each address need a minimum balance of 0.1 ACA/KAR, this is call [Existential Deposit](https://wiki.acala.network/get-started/acala-network/acala-account#existential-deposit). Sending a transaction with value lower than ED to a **new address** will result in this error.
+Each address needs a minimum balance of 0.1 ACA/KAR, this is called [Existential Deposit](https://wiki.acala.network/get-started/acala-network/acala-account#existential-deposit). Sending a transaction with value lower than ED to a **new address** will result in this error.
 
 **Suggested actions:**
 - when sending native token to a new EOA, make sure the value is greater than ED, which is 0.1 ACA/KAR.
