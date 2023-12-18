@@ -311,3 +311,12 @@ await contractInstance.someMethod();
 Note that `JsonRpcProvider` should still work in most cases, such as getting account balance, etc... The only senario that this error occur is when sending a transaction with `Provider.sendTransaction`.
 
 Also, such error only occurs with `ethers.JsonRpcProvider`, and using other providers (such as metamask's provider) should be fine.
+
+### `Account cannot exist with the funds that would be given`
+**Common causes:**
+
+Each address need a minimum balance of 0.1 ACA/KAR, this is call [Existential Deposit](https://wiki.acala.network/get-started/acala-network/acala-account#existential-deposit). Sending a transaction with value lower than ED to a **new address** will result in this error.
+
+**Suggested actions:**
+- when sending native token to a new EOA, make sure the value is greater than ED, which is 0.1 ACA/KAR.
+- if target address is a contract that handles payments, we can send 0.1 ACA/KAR to the contract right after the it is deployed, so this error won't occur for any following transactions.
