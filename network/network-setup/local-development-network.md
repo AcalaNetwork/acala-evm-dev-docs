@@ -27,7 +27,7 @@ Once you see logs like this, the local development stack is ready.
  --------------------------------------------
               🚀 SERVER STARTED 🚀
  --------------------------------------------
- version         : bodhi.js/eth-rpc-adapter/2.7.3
+ version         : bodhi.js/eth-rpc-adapter/2.8.1
  endpoint url    : ws://mandala-node:9944
  subquery url    : http://graphql-engine:3001
  listening to    : 8545
@@ -53,7 +53,7 @@ It's ok to see some error messege in the docker logs, since we don't have transa
 ![Cleaning up the local development network](<../../.gitbook/assets/image (4) (1).png>)
 
 ### start a light stack
-A light stack is a stack without subquery services, it only contains mandala node and eth rpc adapter. It's useful when you want to test some simple transactions, but it lacks the ability to fetch logs. ([when do I need subquery?](https://evmdocs.acala.network/miscellaneous/faqs#when-do-i-need-to-provide-subquery-url-for-eth-rpc-adpater-or-evmrpcprovider))
+A light stack is a stack without subquery services, it only contains mandala node and eth rpc adapter. It's useful when you want to test some simple transactions locally, but it lacks the ability to fetch some historical logs. ([when do I need subquery?](https://evmdocs.acala.network/miscellaneous/faqs#when-do-i-need-to-provide-subquery-url-for-eth-rpc-adpater-or-evmrpcprovider))
 
 To start a light stack, first start a local mandala node
 ```
@@ -62,7 +62,7 @@ docker run -it --rm -p 9944:9944 -p 9933:9933 ghcr.io/acalanetwork/mandala-node:
 
 Then start an eth rpc adapter
 ```
-docker run -it --rm -p 8545:8545 acala/eth-rpc-adapter:2.7.4 --endpoint ws://host.docker.internal:9944 --local-mode
+docker run -it --rm -p 8545:8545 acala/eth-rpc-adapter:2.8.1 --endpoint ws://host.docker.internal:9944 --local-mode
 ```
 
 ## The local development network services
