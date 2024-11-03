@@ -79,5 +79,3 @@ We suggest you implement a check in your dApp to verify that the user has bound 
 ## Conclusion
 
 While the preexisting security considerations of developing in the EVM still apply, Acala EVM+'s improvements also introduce new ones. The list of security considerations in this article should give you a good overview on what to expect.
-
-If you think a security consideration could be explained into more depth or if you have questions about other potential security considerations, not mentioned in this article, we encourage you to get in touch over [Discord](https://www.acala.gg/) or any other communication channel.
