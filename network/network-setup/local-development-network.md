@@ -42,7 +42,9 @@ verbose         : true
 --------------------------------------------
 ```
 
-This contains a local Acala fork, eth rpc adapter, without subquery services. For local testing purpose, we usually do not need subquery services, and if you would like to setup a local subquery service, you can refer to the [subquery docs]([../../tooling/subquery/running-subquery-locally.md](https://github.com/AcalaNetwork/bodhi.js/tree/master/packages/evm-subql#run-with-docker)).
+This stack contains a local Acala fork, and an eth rpc adapter.
+
+It does not contain a subquery services, since for local testing purpose, we usually do not need subquery services, and if you would like to setup a local subquery service, you can refer to the [subquery docs](https://github.com/AcalaNetwork/bodhi.js/tree/master/packages/evm-subql#run-with-docker).
 
 {% hint style="info" %}
 **In order to have a clean start after every shutdown of the node, run the following command after the node was shut down:**
@@ -50,10 +52,8 @@ This contains a local Acala fork, eth rpc adapter, without subquery services. Fo
 **`docker compose down -v`**
 {% endhint %}
 
-![Cleaning up the local development network](<../../.gitbook/assets/image (4) (1).png>)
-
 ## The local development network services
-Once the full local development network is up and running, the following services are available:
+Once the local development network is up and running, the following services are available:
 
 * A local mandala node: [ws://localhost:9944](ws://localhost:9944)
 * \*A subquery service: [http://localhost:3001](http://localhost:3001)
