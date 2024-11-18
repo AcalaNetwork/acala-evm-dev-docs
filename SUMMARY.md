@@ -21,6 +21,7 @@
 ## 🛠 Tooling
 
 * [Tooling](tooling/tooling.md)
+* [Faucet](tooling/faucet.md)
 * [RPC adapter](tooling/rpc-adapter/README.md)
 * [Chain explorer](tooling/chain-explorer.md)
 * [MetaMask](tooling/metamask/README.md)
