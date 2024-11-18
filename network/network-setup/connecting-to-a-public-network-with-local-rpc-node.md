@@ -4,7 +4,7 @@ description: Instructions on how to setup local RPC node that connects to a publ
 
 # Connecting to a public network with local RPC node
 
-Except from connecting to local development network, we can also run a local RPC node connecting to public networks. 
+Except from connecting to local development network, we can also run a local RPC node connecting to public networks.
 
 ```
 npx @acala-network/eth-rpc-adapter@latest \
@@ -14,11 +14,11 @@ npx @acala-network/eth-rpc-adapter@latest \
 
 Node endpoints and subquery urls can be found in [network configuration](../network-configuration.md).
 
-For example to connect to Mandala testnet:
+For example to connect to acala mainnet:
 ```
 npx @acala-network/eth-rpc-adapter@latest \
-  --endpoint wss://mandala-tc9-rpc.aca-staging.network \
-  --subql https://subql-query-tc9.aca-staging.network
+  --endpoint wss://acala-rpc.aca-api.network \
+  --subql https://subql-query-acala.aca-api.network
 ```
 
 Also checkout the help command for more details

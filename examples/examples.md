@@ -11,7 +11,6 @@ Depending on which framework/tooling you prefer, there are slight modifications 
 - Framework Examples
   - [hardhat](https://github.com/AcalaNetwork/hardhat-tutorials)
   - [truffle](https://github.com/AcalaNetwork/truffle-tutorials)
-  - [waffle](https://github.com/AcalaNetwork/bodhi.js/tree/master/examples/waffle)
   - [foundry](https://github.com/AcalaNetwork/bodhi.js/tree/master/examples/foundry/counter)
 - Tooling Examples
   - [subquery](https://github.com/AcalaNetwork/acala-evm-indexer-examples/tree/master/subquery)

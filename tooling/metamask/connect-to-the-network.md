@@ -6,7 +6,7 @@ description: >-
 
 # Connect to the network
 
-You can add the network to the MetaMask using the Chainlist  service or follow the instructions on how to add the network manually.
+You can add the network to the MetaMask using the [Chainlist service](https://chainlist.org/?search=acala) or follow the instructions on how to add the network manually.
 
 ## Automated process
 
@@ -35,20 +35,3 @@ In order to be able to interact with the Acala EVM+ in Mandala TC9, you first ne
 ![MetaMask => Currently active network => Add network](https://1503523808-files.gitbook.io/\~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MAz4EenwXLth\_HO\_hmJ-887967055%2Fuploads%2FWz1rByJAVVr5MOdxgEaS%2FScreenshot%202022-03-02%20at%2002.22.49.png?alt=media\&token=365d2c22-49d2-4952-94cf-54a7fe154ad8)
 
 This should open up a form to add a new network to your MetaMask (you might have to unlock MetaMask before it opens). Once the form is opened, use the following information to add the Mandala TC9 network.
-
-### Mandala TC9 connection details
-
-| **Network name**       | Mandala TC9                                              |   |
-| ---------------------- | -------------------------------------------------------- | - |
-| **New RPC URL**        | `https://eth-rpc-tc9.aca-staging.network` |   |
-| **Chain ID**           | 595                                                      |   |
-| **Currency symbol**    | mACA                                                     |   |
-| **Block Explorer URL** | `https://blockscout.mandala.aca-staging.network/`        |   |
-
-![Mandala TC9 connection details](<../../.gitbook/assets/Screenshot 2022-07-07 at 11.48.11.png>)
-
-Mandala TC9 should now be connected and you should see your ACA balance (if you already have it).
-
-![MetaMask connected to Mandala TC9](https://1503523808-files.gitbook.io/\~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MAz4EenwXLth\_HO\_hmJ-887967055%2Fuploads%2FUIMYw8u7yCY6RFEhXJa3%2Fimage.png?alt=media\&token=e0bb8dd9-d6d6-4e45-a9f6-974d6299eb69)
-
-You might have to bind your MetaMask account to your Substrate account in order to see your balance. Documentation on how to do it is available [here](../development-account/#bind-accounts).
