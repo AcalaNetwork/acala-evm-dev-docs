@@ -30,8 +30,6 @@ And to use the precompiled smart contract within your script use the:
 const TokenContract = require("@acala-network/contracts/build/contracts/Token.json");
 ```
 
-For more information about how to use the precompiled smart contracts of the Acala EVM+ and how to interact with the predeployed smart contracts, please refer to [Hardhat](../../examples/hardhat-tutorials/), [Truffle](../../examples/truffle-tutorials/) or [Waffle](../../examples/waffle-tutorials.md) tutorials.
-
 ## Predeployed smart contracts
 
 Predeployed smart contracts in Acala EVM+ allow for the reliable use of the smart contracts that are always deployed at the same address no matter the chain. The predeployed smart contracts include Tokens smart contracts, the native on chain scheduler called Schedule, Oracle, DEX and StateRent.

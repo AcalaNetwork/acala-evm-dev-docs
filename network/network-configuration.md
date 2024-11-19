@@ -4,7 +4,46 @@ description: Addressing and identification information of Acala networks.
 
 # Network configuration
 
-The following tables contain the information necessary to connect to Acala networks. 
+The following tables contain the information necessary to connect to Acala networks.
+
+## Acala Mainnet
+
+| **Name**             | Acala                                                                |
+| -------------------- | -------------------------------------------------------------------- |
+| **Node Endpoint**    | `wss://acala-rpc.aca-api.network`                                    |
+| **ETH RPC Endpoint** | `https://eth-rpc-acala.aca-api.network`                              |
+| **WS Endpoint**      | `wss://eth-rpc-acala.aca-api.network`                                |
+| **Subquery**         | `https://subql-query-acala.aca-api.network`                          |
+| **Explorer**         | [https://blockscout.acala.network](https://blockscout.acala.network) |
+| **Chan ID**          | 787                                                                  |
+| **Symbol**           | ACA                                                                  |
+
+There is also a developer-facing beta version that usually contains some latest features, but might be unstable.
+
+| **Name**             | Acala Beta                                  |
+| -------------------- | ------------------------------------------- |
+| **ETH RPC Endpoint** | `https://eth-rpc-acala.aca-staging.network` |
+| **WS Endpoint**      | `wss://eth-rpc-acala.aca-staging.network`   |
+
+## Karura Mainnet
+
+| **Name**             | Karura                                                                 |
+| -------------------- | ---------------------------------------------------------------------- |
+| **Node Endpoint**    | `wss://karura-rpc.aca-api.network`                                     |
+| **ETH RPC Endpoint** | `https://eth-rpc-karura.aca-api.network`                               |
+| **WS Endpoint**      | `wss://eth-rpc-karura.aca-api.network`                                 |
+| **Subquery**         | `https://subql-query-karura.aca-api.network`                           |
+| **Explorer**         | [https://blockscout.karura.network](https://blockscout.karura.network) |
+| **Chan ID**          | 686                                                                    |
+| **Symbol**           | KAR                                                                    |
+
+There is also a developer-facing beta version that usually contains some latest features, but might be unstable.
+
+| **Name**             | Karura Beta                                  |
+| -------------------- | -------------------------------------------- |
+| **ETH RPC Endpoint** | `https://eth-rpc-karura.aca-staging.network` |
+| **WS Endpoint**      | `wss://eth-rpc-karura.aca-staging.network`   |
+
 
 ## Local Development Network
 
@@ -53,42 +92,3 @@ This section assumes you are using the dockerized local development network desc
 | **Explorer**        | [https://blockscout.acala-dev.aca-dev.network](https://blockscout.acala-dev.aca-dev.network)       |
 | **Chan ID**         | 597                                        |
 | **Symbol**          | ACA                                        |
-
-## Karura Mainnet
-
-| **Name**            | Karura                                     |
-| ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://karura-rpc.aca-api.network`  |
-| **ETH RPC Endpoint**             | `https://eth-rpc-karura.aca-api.network`  |
-| **WS Endpoint**   | `wss://eth-rpc-karura.aca-api.network`  |
-| **Subquery**    | `https://subql-query-karura.aca-api.network` |
-| **Explorer**        | [https://blockscout.karura.network](https://blockscout.karura.network)       |
-| **Chan ID**         | 686                                        |
-| **Symbol**          | KAR                                        |
-
-There is also a developer-facing beta version that usually contains some latest features, but might be unstable.
-
-| **Name**            | Karura Beta                                     |
-| ------------------- | ------------------------------------------ |
-| **ETH RPC Endpoint**             | `https://eth-rpc-karura.aca-staging.network`  |
-| **WS Endpoint**   | `wss://eth-rpc-karura.aca-staging.network`  |
-
-
-## Acala Mainnet
-
-| **Name**            | Acala                                     |
-| ------------------- | ------------------------------------------ |
-| **Node Endpoint**             | `wss://acala-rpc.aca-api.network`  |
-| **ETH RPC Endpoint**             | `https://eth-rpc-acala.aca-api.network`  |
-| **WS Endpoint**   | `wss://eth-rpc-acala.aca-api.network`  |
-| **Subquery**    | `https://subql-query-acala.aca-api.network` |
-| **Explorer**        | [https://blockscout.acala.network](https://blockscout.acala.network)       |
-| **Chan ID**         | 787                                       |
-| **Symbol**          | ACA                                       |
-
-There is also a developer-facing beta version that usually contains some latest features, but might be unstable.
-
-| **Name**            | Acala Beta                             |
-| ------------------- | ------------------------------------------ |
-| **ETH RPC Endpoint**             | `https://eth-rpc-acala.aca-staging.network`  |
-| **WS Endpoint**   | `wss://eth-rpc-acala.aca-staging.network`  |
